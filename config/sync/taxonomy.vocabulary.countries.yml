@@ -1,0 +1,9 @@
+uuid: d359e67e-3456-443e-9eb0-e3dcdd5499f0
+langcode: ru
+status: true
+dependencies: {  }
+name: 'Страны и регионы'
+vid: countries
+description: 'Страны и регионы'
+hierarchy: 0
+weight: 0

@@ -1,0 +1,28 @@
+uuid: e73c74a4-0d51-497d-9f3e-c94446629ddd
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country
+    - node.type.guide_service
+    - taxonomy.vocabulary.countries
+id: node.guide_service.field_country
+field_name: field_country
+entity_type: node
+bundle: guide_service
+label: Страна
+description: 'Ваша страна'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      countries: countries
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

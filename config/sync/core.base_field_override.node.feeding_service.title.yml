@@ -1,0 +1,18 @@
+uuid: 2254b228-1d48-4549-894c-a3aa016f6b3b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.feeding_service
+id: node.feeding_service.title
+field_name: title
+entity_type: node
+bundle: feeding_service
+label: Название
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,82 @@
+uuid: 5751ee06-fb3a-49b6-a76b-5ab4f5fd0ab6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.sacred_place.body
+    - field.field.node.sacred_place.field_city
+    - field.field.node.sacred_place.field_coords
+    - field.field.node.sacred_place.field_country
+    - field.field.node.sacred_place.field_sacred_place_type
+    - field.field.node.sacred_place.field_site_url
+    - node.type.sacred_place
+  module:
+    - cshs
+    - geolocation
+    - link
+    - text
+    - user
+id: node.sacred_place.default
+targetEntityType: node
+bundle: sacred_place
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 3
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_city:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_coords:
+    type: geolocation_latlng
+    weight: 5
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_country:
+    weight: 1
+    label: hidden
+    settings:
+      linked: '1'
+      separator: ' » '
+      reverse: false
+    third_party_settings: {  }
+    type: cshs_full_hierarchy
+    region: content
+  field_sacred_place_type:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_site_url:
+    type: link
+    weight: 4
+    region: content
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  links:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

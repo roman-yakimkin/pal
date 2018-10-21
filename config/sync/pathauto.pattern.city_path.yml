@@ -1,0 +1,22 @@
+uuid: cf2d8333-01e5-45f6-b842-3034b295b3fe
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: city_path
+label: 'Населенный пункт - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'city/[node:nid]'
+selection_criteria:
+  1efafe09-7b8c-4d3b-8f50-281094596e67:
+    id: node_type
+    bundles:
+      city: city
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 1efafe09-7b8c-4d3b-8f50-281094596e67
+selection_logic: and
+weight: -5
+relationships: {  }

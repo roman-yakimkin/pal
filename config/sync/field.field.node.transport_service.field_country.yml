@@ -1,0 +1,28 @@
+uuid: 8aa864be-85e6-46f7-8c14-bff5b834972c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country
+    - node.type.transport_service
+    - taxonomy.vocabulary.countries
+id: node.transport_service.field_country
+field_name: field_country
+entity_type: node
+bundle: transport_service
+label: Страна
+description: 'Укажите страну и при необходимости регион'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      countries: countries
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

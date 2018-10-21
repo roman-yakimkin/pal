@@ -1,0 +1,23 @@
+uuid: c6d08fc8-4ab8-4a6b-a073-fc83d5dd2f23
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_url
+    - node.type.piligrimage_service
+  module:
+    - link
+id: node.piligrimage_service.field_site_url
+field_name: field_site_url
+entity_type: node
+bundle: piligrimage_service
+label: 'Официальный сайт'
+description: 'Адрес официального сайта организации'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

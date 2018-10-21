@@ -1,0 +1,14 @@
+name: Palom Advert
+type: module
+description: A module for adverts.
+package: YRV Palom
+# core: 8.x
+dependencies:
+  - drupal:node
+  - drupal:datetime
+  - field_elements:field_elements
+  - palom_libs:palom_libs
+
+version: '8.x-1.x'
+core: '8.x'
+project: 'yrv_palom'

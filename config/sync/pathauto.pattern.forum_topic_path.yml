@@ -1,0 +1,22 @@
+uuid: 739d16c7-28ca-4617-be6e-e49ee5a8acd0
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: forum_topic_path
+label: 'Тема форума - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'forum/topic-[node:nid]'
+selection_criteria:
+  144e791f-72f2-4b0c-91c5-1782f51c2252:
+    id: node_type
+    bundles:
+      forum: forum
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 144e791f-72f2-4b0c-91c5-1782f51c2252
+selection_logic: and
+weight: -5
+relationships: {  }

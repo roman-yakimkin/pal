@@ -1,0 +1,20 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+function palomniki_preprocess_table__forum_topic_list(&$vars){
+//    kint($vars);
+//    kint($vars['rows'][0]['cells']);
+
+    $vars['header'][0]['attributes']->addClass(['col-xs-9', 'col-sm-6']);
+    $vars['header'][1]['attributes']->addClass(['col-xs-3', 'col-sm-2']);
+    $vars['header'][2]['attributes']->addClass(['hidden-xs', 'col-sm-4']);
+
+    $vars['rows'][0]['cells'][0]['attributes']->addClass(['col-xs-9', 'col-sm-6']);
+    $vars['rows'][0]['cells'][1]['attributes']->addClass(['col-xs-3', 'col-sm-2']);
+    $vars['rows'][0]['cells'][2]['attributes']->addClass(['hidden-xs', 'col-sm-4']);
+}

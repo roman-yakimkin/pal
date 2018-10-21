@@ -1,0 +1,21 @@
+uuid: 50ee8818-be1a-433c-9abf-94d4dcc277de
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phones
+    - node.type.feeding_service
+id: node.feeding_service.field_phones
+field_name: field_phones
+entity_type: node
+bundle: feeding_service
+label: Телефоны
+description: 'Здесь вы можете указать свои контактные телефоны'
+required: false
+translatable: true
+default_value:
+  -
+    value: admin
+default_value_callback: ''
+settings: {  }
+field_type: string

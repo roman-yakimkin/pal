@@ -1,0 +1,26 @@
+uuid: 42ddfd38-7a1e-4baf-a70b-cd44291e03e9
+langcode: ru
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - palomniki
+_core:
+  default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
+id: palomniki_main_menu
+theme: palomniki
+region: header
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Основная навигация'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+visibility: {  }

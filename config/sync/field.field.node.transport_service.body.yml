@@ -1,0 +1,22 @@
+uuid: 4d219f7f-db0c-4ff9-803e-71279e9f0496
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.transport_service
+  module:
+    - text
+id: node.transport_service.body
+field_name: body
+entity_type: node
+bundle: transport_service
+label: Описание
+description: 'Описание услуги по перевозке паломников'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

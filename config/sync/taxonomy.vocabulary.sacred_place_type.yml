@@ -1,0 +1,9 @@
+uuid: ad6e69a0-64df-4d7d-911e-a091debbd761
+langcode: ru
+status: true
+dependencies: {  }
+name: 'Тип святого места'
+vid: sacred_place_type
+description: 'Тип святого места'
+hierarchy: 0
+weight: 0

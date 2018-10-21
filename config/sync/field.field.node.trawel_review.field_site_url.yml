@@ -1,0 +1,23 @@
+uuid: 707689df-b41b-4326-8268-880c32a23535
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_url
+    - node.type.trawel_review
+  module:
+    - link
+id: node.trawel_review.field_site_url
+field_name: field_site_url
+entity_type: node
+bundle: trawel_review
+label: 'Ссылка на сайт'
+description: 'Ссылка на сайт, откуда взято описание поездки'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

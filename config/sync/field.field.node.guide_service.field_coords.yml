@@ -1,0 +1,21 @@
+uuid: 339f985c-3abf-4d1f-a7b1-df90eae83070
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coords
+    - node.type.guide_service
+  module:
+    - geolocation
+id: node.guide_service.field_coords
+field_name: field_coords
+entity_type: node
+bundle: guide_service
+label: 'Координаты офиса'
+description: 'Здесь Вы можете указать свой офис на карте'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

@@ -1,0 +1,22 @@
+uuid: 77f02f3e-38df-49f8-a802-53e7d4ed41fc
+langcode: ru
+status: true
+dependencies:
+  theme:
+    - palomniki
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: palomniki_local_tasks
+theme: palomniki
+region: content
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Вкладки
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

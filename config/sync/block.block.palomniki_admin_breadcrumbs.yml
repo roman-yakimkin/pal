@@ -1,0 +1,22 @@
+uuid: f7dbdedc-81d1-42ea-88cc-8cb2c9b3c29d
+langcode: ru
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - palomniki_admin
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: palomniki_admin_breadcrumbs
+theme: palomniki_admin
+region: sidebar_first
+weight: -7
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Строка навигации'
+  provider: system
+  label_display: '0'
+visibility: {  }

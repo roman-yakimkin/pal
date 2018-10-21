@@ -1,0 +1,25 @@
+uuid: 843666ff-ad45-44c9-af10-dbfc5864db31
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.housing_service
+id: node.housing_service.field_city
+field_name: field_city
+entity_type: node
+bundle: housing_service
+label: 'Населенный пункт'
+description: 'Населенный пункт пункта проживания паломников'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: cities_for_reference
+      display_name: entity_reference_cities
+      arguments: {  }
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: 4b7f810e-285a-42b5-ba8e-7cc93374c43b
+langcode: ru
+status: true
+dependencies:
+  theme:
+    - palomniki_admin
+id: tabs
+theme: palomniki_admin
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Основные вкладки'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

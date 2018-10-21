@@ -1,0 +1,21 @@
+uuid: a3a7473a-93cb-43c0-8799-2cca48ff3dae
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phones
+    - node.type.transport_service
+id: node.transport_service.field_phones
+field_name: field_phones
+entity_type: node
+bundle: transport_service
+label: Телефоны
+description: 'Здесь вы можете указать свои контактные телефоны'
+required: false
+translatable: true
+default_value:
+  -
+    value: admin
+default_value_callback: ''
+settings: {  }
+field_type: string

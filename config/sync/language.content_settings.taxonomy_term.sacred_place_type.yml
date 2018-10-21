@@ -1,0 +1,11 @@
+uuid: 366d09fe-ce35-402b-a94a-f9d2f191735b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sacred_place_type
+id: taxonomy_term.sacred_place_type
+target_entity_type_id: taxonomy_term
+target_bundle: sacred_place_type
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,49 @@
+uuid: 1561b843-1b46-49a1-aecc-b9f5738b22af
+langcode: ru
+status: true
+dependencies:
+  config:
+    - search_api.server.server_db_default
+  module:
+    - search_api
+    - palom_places
+    - node
+id: index_places
+name: 'Святые места'
+description: ''
+read_only: false
+field_settings:
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - sacred_place
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  country_value: {  }
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  ignorecase:
+    all_fields: true
+    fields:
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: server_db_default

@@ -1,0 +1,21 @@
+uuid: b87dc09e-85a6-497c-b7c8-3777f46c959f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phones
+    - node.type.housing_service
+id: node.housing_service.field_phones
+field_name: field_phones
+entity_type: node
+bundle: housing_service
+label: Телефоны
+description: 'Здесь вы можете указать свои контактные телефоны'
+required: false
+translatable: true
+default_value:
+  -
+    value: admin
+default_value_callback: ''
+settings: {  }
+field_type: string

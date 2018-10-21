@@ -1,0 +1,22 @@
+uuid: 2f42b456-8b9f-4a3d-9ae7-ccd3f622212d
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.feeding_service
+  module:
+    - text
+id: node.feeding_service.body
+field_name: body
+entity_type: node
+bundle: feeding_service
+label: Описание
+description: 'Описание организации по питанию паломников'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

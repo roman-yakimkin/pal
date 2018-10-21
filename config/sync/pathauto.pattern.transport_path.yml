@@ -1,0 +1,22 @@
+uuid: 11416035-b338-4ec3-ae71-f28286e76883
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: transport_path
+label: 'Перевозка паломников - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'transport/[node:nid]'
+selection_criteria:
+  2b084d6a-e21d-4e80-961b-921b515a99cc:
+    id: node_type
+    bundles:
+      transport_service: transport_service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 2b084d6a-e21d-4e80-961b-921b515a99cc
+selection_logic: and
+weight: -5
+relationships: {  }

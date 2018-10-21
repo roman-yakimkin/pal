@@ -1,0 +1,22 @@
+uuid: 417f1e6c-76bc-4c24-8d9e-53f49aaa3dc7
+langcode: ru
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - palomniki_admin
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: palomniki_admin_powered
+theme: palomniki_admin
+region: sidebar_first
+weight: -6
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Сделано на Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 89cce291-c3b6-463b-bf4b-96bfca01cf20
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phones
+    - node.type.piligrimage_service
+id: node.piligrimage_service.field_phones
+field_name: field_phones
+entity_type: node
+bundle: piligrimage_service
+label: Телефоны
+description: 'Контактные телефоны'
+required: false
+translatable: false
+default_value:
+  -
+    value: admin
+default_value_callback: ''
+settings: {  }
+field_type: string

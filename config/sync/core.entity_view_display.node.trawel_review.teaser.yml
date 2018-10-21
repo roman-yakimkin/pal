@@ -1,0 +1,29 @@
+uuid: 62a84925-d2f9-44e0-b52c-e02f4fa92c29
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.trawel_review.body
+    - node.type.trawel_review
+  module:
+    - text
+    - user
+id: node.trawel_review.teaser
+targetEntityType: node
+bundle: trawel_review
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

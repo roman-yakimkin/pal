@@ -1,0 +1,11 @@
+uuid: 99d0bd4b-9631-4263-81ef-988edf56408b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.feeding_service
+id: node.feeding_service
+target_entity_type_id: node
+target_bundle: feeding_service
+default_langcode: site_default
+language_alterable: false

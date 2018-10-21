@@ -1,0 +1,20 @@
+schemas:
+  bootstrap: 8000
+  palomniki: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://palomniki.local/themes/palomniki/favicon.ico'
+  use_default: 1
+features:
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+  node_user_picture: 1
+logo:
+  path: ''
+  url: ''
+  use_default: 0
+table_responsive: '-1'
+table: ''
+langcode: ru

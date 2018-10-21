@@ -1,0 +1,11 @@
+uuid: 3e05cca0-6953-448e-ac98-3616dd608412
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.trawel_review
+id: node.trawel_review
+target_entity_type_id: node
+target_bundle: trawel_review
+default_langcode: site_default
+language_alterable: false

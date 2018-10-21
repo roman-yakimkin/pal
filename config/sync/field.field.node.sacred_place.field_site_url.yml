@@ -1,0 +1,23 @@
+uuid: 4290fce5-cc22-4026-a85c-5a76c3cd263b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_url
+    - node.type.sacred_place
+  module:
+    - link
+id: node.sacred_place.field_site_url
+field_name: field_site_url
+entity_type: node
+bundle: sacred_place
+label: 'Официальный сайт'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

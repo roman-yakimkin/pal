@@ -1,0 +1,161 @@
+uuid: ccd1705b-020f-46a4-b16d-375c2bab5995
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.sacred_places_by_node
+    - field.field.node.transport_service.body
+    - field.field.node.transport_service.field_attached_files
+    - field.field.node.transport_service.field_avg_cost
+    - field.field.node.transport_service.field_avg_cost_remark
+    - field.field.node.transport_service.field_city
+    - field.field.node.transport_service.field_coords
+    - field.field.node.transport_service.field_country
+    - field.field.node.transport_service.field_phones
+    - field.field.node.transport_service.field_photogallery
+    - field.field.node.transport_service.field_sacred_places
+    - field.field.node.transport_service.field_site_url
+    - node.type.transport_service
+  module:
+    - cshs
+    - file
+    - geolocation
+    - image
+    - link
+    - reference_table_formatter
+    - text
+    - user
+id: node.transport_service.sacred_places_by_node
+targetEntityType: node
+bundle: transport_service
+mode: sacred_places_by_node
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_attached_files:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_avg_cost:
+    weight: 4
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_avg_cost_remark:
+    weight: 6
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_city:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_coords:
+    weight: 10
+    label: hidden
+    settings:
+      title: ''
+      set_marker: '1'
+      common_map: ''
+      info_text: ''
+      use_overridden_map_settings: 0
+      google_map_settings:
+        type: ROADMAP
+        zoom: '10'
+        minZoom: 0
+        maxZoom: 18
+        rotateControl: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        fullscreenControl: 0
+        scrollwheel: 1
+        disableDoubleClickZoom: 0
+        draggable: 1
+        height: 400px
+        width: 100%
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        style: ''
+        preferScrollingToZooming: 0
+        gestureHandling: auto
+    third_party_settings: {  }
+    type: geolocation_map
+    region: content
+  field_country:
+    weight: 2
+    label: inline
+    settings:
+      linked: '1'
+      separator: ' » '
+      reverse: false
+    third_party_settings: {  }
+    type: cshs_full_hierarchy
+    region: content
+  field_phones:
+    weight: 5
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_photogallery:
+    weight: 8
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_sacred_places:
+    type: entity_reference_table
+    weight: 11
+    region: content
+    label: hidden
+    settings:
+      view_mode: teaser
+      empty_cell_value: ''
+      show_entity_label: false
+      hide_header: '0'
+    third_party_settings: {  }
+  field_site_url:
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

@@ -1,0 +1,22 @@
+uuid: 7b3e555a-1934-4a1b-9882-94097979c07c
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: housing_path
+label: 'Проживание паломников - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'housing/[node:nid]'
+selection_criteria:
+  489c9f2d-322d-4acd-b7f0-8e3e31a09792:
+    id: node_type
+    bundles:
+      housing_service: housing_service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 489c9f2d-322d-4acd-b7f0-8e3e31a09792
+selection_logic: and
+weight: -5
+relationships: {  }

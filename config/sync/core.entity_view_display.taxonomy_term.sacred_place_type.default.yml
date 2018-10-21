@@ -1,0 +1,33 @@
+uuid: 2fe0c76c-895e-4e3f-bc1a-c56967581905
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.sacred_place_type.field_sacred_place_image
+    - taxonomy.vocabulary.sacred_place_type
+  module:
+    - image
+    - text
+id: taxonomy_term.sacred_place_type.default
+targetEntityType: taxonomy_term
+bundle: sacred_place_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_sacred_place_image:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  langcode: true

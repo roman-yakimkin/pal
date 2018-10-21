@@ -1,0 +1,113 @@
+uuid: 06d15abe-2d10-42d5-898a-c3e542b4ceef
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.city.body
+    - field.field.node.city.field_city_type
+    - field.field.node.city.field_country
+    - field.field.node.city.field_geo
+    - field.field.node.city.field_site_url
+    - node.type.city
+  module:
+    - link
+    - path
+    - shs
+    - text
+id: node.city.default
+targetEntityType: node
+bundle: city
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 4
+    settings:
+      rows: 9
+      placeholder: ''
+      summary_rows: 3
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_city_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_country:
+    weight: 2
+    settings:
+      force_deepest: false
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+    third_party_settings: {  }
+    type: options_shs
+    region: content
+  field_site_url:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  langcode:
+    type: language_select
+    weight: 6
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    third_party_settings: {  }
+    region: content
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden:
+  field_geo: true

@@ -1,0 +1,76 @@
+<?php
+use Drupal\group\Entity\Group;
+use Drupal\group\Entity\GroupContent;
+use Drupal\group\Entity\GroupType;
+use Drupal\group\Entity\Storage\GroupContentStorage;
+use Drupal\node\Entity\Node;
+use Drupal\palom_group\PalomGroup;
+
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function palom_group_node_insert(Drupal\Core\Entity\EntityInterface $node)
+{
+    // Если добавляется нода, которая относится к организациям
+    if (PalomGroup::typeIsOrgn($node->getType())){
+
+        $group_type_name = PalomGroup::getGroupTypeByNodeType($node->getType());
+
+        // При добавлении новой организации создается группа
+        $group = Group::create([
+            'type' => $group_type_name,
+            'label' => $node->getTitle(),
+        ]);
+        $group->enforceIsNew();
+        $group->save();
+
+        // Добавить в группу данную организацию
+        $plugin_name = 'group_node:'.$node->getType();
+        $type = GroupType::load($group_type_name)->getContentPlugin($plugin_name)->getContentTypeConfigId();
+        $groupContentEntity = GroupContent::create([
+            'gid' => $group->id(),
+            'entity_id' => $node->id(),
+            'type' => $type,
+        ]);
+
+        $groupContentEntity->save();
+    }
+
+    // При добавлении паломнического марщрута его следует добавить в ту группу,
+    // которая связана с паломнической службой
+    if ($node->getType() == 'advert'){
+        $service_id = $node->get('field_service')->getValue()[0]['target_id'];
+        $groups = PalomGroup::getGroupIdByEntityId('group_ps', 'group_node:piligrimage_service', $service_id);
+        if ($groups != []){
+
+            $group_id = $groups[0];
+            $group_type_name = PalomGroup::getGroupTypeByNodeType($node->getType());
+            $type = GroupType::load($group_type_name)->getContentPlugin('group_node:advert')->getContentTypeConfigId();
+
+            $groupContentEntity = GroupContent::create([
+                'gid' => $group_id,
+                'entity_id' => $node->id(),
+                'type' => $type,
+            ]);
+            $groupContentEntity->save();
+        }
+
+    }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function palom_group_node_update(Drupal\Core\Entity\EntityInterface $node)
+{
+    // Отредактировать название группы после редактирования организации
+    if ($node->getType() == 'advert'){
+        $service_id = $node->get('field_service')->getValue()[0]['target_id'];
+        $groups = PalomGroup::getGroupIdByEntityId('group_ps', 'group_node:piligrimage_service', $service_id);
+        if ($groups != []) {
+
+        }
+
+    }
+}

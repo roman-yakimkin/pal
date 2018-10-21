@@ -1,0 +1,38 @@
+uuid: de87ce9c-e32b-41b8-b8e1-e23bbc37de54
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photogallery
+    - node.type.piligrimage_service
+  module:
+    - image
+id: node.piligrimage_service.field_photogallery
+field_name: field_photogallery
+entity_type: node
+bundle: piligrimage_service
+label: Фотогалерея
+description: 'Фотогалерея, состоящая из нескольких фотографий и изображений'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

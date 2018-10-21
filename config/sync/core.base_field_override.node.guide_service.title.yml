@@ -1,0 +1,18 @@
+uuid: 4779e1f8-cb68-42cf-80e4-82bd75f21c8c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.guide_service
+id: node.guide_service.title
+field_name: title
+entity_type: node
+bundle: guide_service
+label: Название
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

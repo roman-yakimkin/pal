@@ -1,0 +1,19 @@
+palom_services.geo_services:
+  path: '/services/{service_path}'
+  defaults:
+    _controller: '\Drupal\palom_services\Controller\ServicesController::getServices'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\palom_services\Controller\ServicesController::access'
+palom_services.geo_services_all:
+  path: '/services'
+  defaults:
+    _controller: '\Drupal\palom_services\Controller\ServicesController::getServicesAll'
+  requirements:
+    _permission: 'access content'
+palom_services.autocomplete:
+  path: '/services-autocomplete'
+  defaults:
+    _controller: '\Drupal\palom_services\Controller\ServicesAutocomplete::autocompletePlaces'
+  requirements:
+    _permission: 'access content'

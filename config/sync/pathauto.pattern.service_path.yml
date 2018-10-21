@@ -1,0 +1,22 @@
+uuid: 489140d7-403c-4acb-bca3-c57336766a81
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: service_path
+label: 'Паломническая служба - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'service/[node:nid]'
+selection_criteria:
+  1aa4059f-d390-45bb-ac96-90def73eb204:
+    id: node_type
+    bundles:
+      piligrimage_service: piligrimage_service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 1aa4059f-d390-45bb-ac96-90def73eb204
+selection_logic: and
+weight: -5
+relationships: {  }

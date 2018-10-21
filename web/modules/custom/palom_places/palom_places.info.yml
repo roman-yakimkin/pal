@@ -1,0 +1,10 @@
+name: Palom Places
+type: module
+description: A module with selection and filtration of Sacred Places.
+package: YRV Palom
+# core: 8.x
+dependencies:
+
+version: '8.x-1.x'
+core: '8.x'
+project: 'yrv_palom'

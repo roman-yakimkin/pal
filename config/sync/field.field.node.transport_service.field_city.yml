@@ -1,0 +1,25 @@
+uuid: 600c733c-f3b8-4849-b9d2-6d4576c38b9e
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.transport_service
+id: node.transport_service.field_city
+field_name: field_city
+entity_type: node
+bundle: transport_service
+label: 'Населенный пункт'
+description: 'Населенный пункт расположения офиса'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: cities_for_reference
+      display_name: entity_reference_cities
+      arguments: {  }
+field_type: entity_reference

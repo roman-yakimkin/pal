@@ -1,0 +1,23 @@
+uuid: ef3ac5fd-e6be-4afd-a3c8-35ab814da553
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_avg_cost
+    - node.type.transport_service
+id: node.transport_service.field_avg_cost
+field_name: field_avg_cost
+entity_type: node
+bundle: transport_service
+label: 'Средняя стоимость за км. (руб.)'
+description: 'Укажите среднюю стоимость ваших услуг из расчета за километр'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: руб.
+field_type: integer

@@ -1,0 +1,11 @@
+uuid: a5e1b587-d788-43d0-9497-5b113978cf3f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.guide_service
+id: node.guide_service
+target_entity_type_id: node
+target_bundle: guide_service
+default_langcode: site_default
+language_alterable: false

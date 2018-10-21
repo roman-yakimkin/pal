@@ -1,0 +1,21 @@
+uuid: ada4ae49-a0c9-4337-b5f3-8df1091cf667
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coords
+    - node.type.piligrimage_service
+  module:
+    - geolocation
+id: node.piligrimage_service.field_coords
+field_name: field_coords
+entity_type: node
+bundle: piligrimage_service
+label: 'Координаты офиса'
+description: 'Местоположение службы на карте'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

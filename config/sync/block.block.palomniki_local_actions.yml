@@ -1,0 +1,20 @@
+uuid: ea4df2fd-e98a-4f7f-a72f-5661df9efdb0
+langcode: ru
+status: true
+dependencies:
+  theme:
+    - palomniki
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: palomniki_local_actions
+theme: palomniki
+region: content
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Основные действия администратора'
+  provider: core
+  label_display: '0'
+visibility: {  }

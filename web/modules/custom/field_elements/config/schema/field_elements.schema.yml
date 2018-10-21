@@ -1,0 +1,28 @@
+field.formatter.settings.yrv_full_city_formatter:
+  type: mapping
+  mapping:
+    city:
+      type: string
+      label: 'City display mode'
+    city_type:
+      type: string
+      label: 'City type display mode'
+    country:
+      type: string
+      label: 'Country display mode'
+    region:
+      type: string
+      label: 'Region display mode'
+
+views.filter.palom_views_geo_filter:
+  type: views_filter
+  label: 'Country and Region views filter YML'
+  mapping:
+    value:
+      type: mapping
+      label: 'Countries YML'
+      mapping:
+        country_id:
+          type: string
+          label: 'Country YML'
+

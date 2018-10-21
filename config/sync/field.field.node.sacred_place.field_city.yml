@@ -1,0 +1,25 @@
+uuid: 45abd613-c525-4247-b477-43b63190a2fc
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.sacred_place
+id: node.sacred_place.field_city
+field_name: field_city
+entity_type: node
+bundle: sacred_place
+label: 'Населенный пункт'
+description: 'Выберите населенный пункт из списка'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: cities_for_reference
+      display_name: entity_reference_cities
+      arguments: {  }
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: e6a52f8a-1aad-4079-bdef-3b276aa60b22
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_avg_cost
+    - node.type.housing_service
+id: node.housing_service.field_avg_cost
+field_name: field_avg_cost
+entity_type: node
+bundle: housing_service
+label: 'Средняя стоимость в сутки (руб.)'
+description: 'Средняя стоимость проживания в сутки'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: руб.
+field_type: integer

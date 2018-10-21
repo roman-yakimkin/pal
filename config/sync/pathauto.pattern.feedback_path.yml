@@ -1,0 +1,22 @@
+uuid: 312c5a4f-d6f4-4d8f-ae67-9c31e122d32f
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: feedback_path
+label: 'Отзыв о поездке - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'travel-review/[node:nid]'
+selection_criteria:
+  9618d0a2-afa7-4e27-bbad-6cab4ee231d7:
+    id: node_type
+    bundles:
+      trawel_review: trawel_review
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 9618d0a2-afa7-4e27-bbad-6cab4ee231d7
+selection_logic: and
+weight: -5
+relationships: {  }

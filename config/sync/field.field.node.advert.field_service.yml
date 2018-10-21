@@ -1,0 +1,28 @@
+uuid: 4ecb7b1c-380f-4634-aaae-9ff747ae7c30
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service
+    - node.type.advert
+    - node.type.piligrimage_service
+id: node.advert.field_service
+field_name: field_service
+entity_type: node
+bundle: advert
+label: Организатор
+description: 'Организатор данной паломнической поездки'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      piligrimage_service: piligrimage_service
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,13 @@
+yrv_advert_dates:
+  version: 1.x
+  js:
+    js/yrv_advert_dates.js: {}
+  css:
+    component:
+      css/yrv_advert_dates.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.ui.datepicker
+    - core/drupal.dialog

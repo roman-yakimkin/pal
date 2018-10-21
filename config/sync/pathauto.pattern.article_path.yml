@@ -1,0 +1,22 @@
+uuid: f18c0f07-7ea9-465b-a186-bbb8ecd60c97
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: article_path
+label: 'Статья - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'article/[node:nid]'
+selection_criteria:
+  87fa3ea7-aeb7-491c-8835-e684076a9a1a:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 87fa3ea7-aeb7-491c-8835-e684076a9a1a
+selection_logic: and
+weight: -5
+relationships: {  }

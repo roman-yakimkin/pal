@@ -1,0 +1,29 @@
+uuid: ad37fbb5-908a-487a-869c-487d81c6e58e
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.housing_service.body
+    - node.type.housing_service
+  module:
+    - text
+    - user
+id: node.housing_service.teaser
+targetEntityType: node
+bundle: housing_service
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

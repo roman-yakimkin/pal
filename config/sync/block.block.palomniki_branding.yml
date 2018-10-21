@@ -1,0 +1,25 @@
+uuid: cea159f0-bf99-4b3c-898a-c903ed1f3751
+langcode: ru
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - palomniki
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: palomniki_branding
+theme: palomniki
+region: header
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Брендинг сайта'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

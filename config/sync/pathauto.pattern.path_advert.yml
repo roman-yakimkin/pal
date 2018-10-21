@@ -1,0 +1,22 @@
+uuid: dfed5248-b55f-49ac-908f-2aa29dc518a5
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: path_advert
+label: 'Маршрут поездки - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'advert/[node:nid]'
+selection_criteria:
+  bb0c19e6-2cc6-4d80-bc11-de6f7eb4752c:
+    id: node_type
+    bundles:
+      advert: advert
+    negate: false
+    context_mapping:
+      node: node
+    uuid: bb0c19e6-2cc6-4d80-bc11-de6f7eb4752c
+selection_logic: and
+weight: -5
+relationships: {  }

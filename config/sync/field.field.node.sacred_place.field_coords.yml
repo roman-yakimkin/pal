@@ -1,0 +1,21 @@
+uuid: 9d8f6f74-745e-4215-8a8e-9ec45f98a3c9
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coords
+    - node.type.sacred_place
+  module:
+    - geolocation
+id: node.sacred_place.field_coords
+field_name: field_coords
+entity_type: node
+bundle: sacred_place
+label: Координаты
+description: 'Географические координаты'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

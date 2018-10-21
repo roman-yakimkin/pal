@@ -1,0 +1,11 @@
+uuid: b55927cc-f22d-4ac3-88c6-18916cb1925f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.city
+id: node.city
+target_entity_type_id: node
+target_bundle: city
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,22 @@
+uuid: 147031f6-1d68-41db-99e8-68dd5a1da1b5
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: page_path
+label: 'Основная страница - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'page/[node:nid]'
+selection_criteria:
+  d0d64bbb-aaaa-4d5b-9cde-b390868d9369:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d0d64bbb-aaaa-4d5b-9cde-b390868d9369
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,72 @@
+uuid: 252427a1-6c63-442f-8bd1-1d11ae2decd9
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.city.body
+    - field.field.node.city.field_city_type
+    - field.field.node.city.field_country
+    - field.field.node.city.field_geo
+    - field.field.node.city.field_site_url
+    - node.type.city
+  module:
+    - cshs
+    - field_elements
+    - link
+    - text
+    - user
+id: node.city.default
+targetEntityType: node
+bundle: city
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_city_type:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_country:
+    weight: 102
+    label: above
+    settings:
+      linked: '1'
+      separator: ' » '
+    third_party_settings: {  }
+    type: cshs_full_hierarchy
+    region: content
+  field_geo:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: field_palom_geo_simple_text
+    region: content
+  field_site_url:
+    weight: 103
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

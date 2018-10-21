@@ -1,0 +1,29 @@
+uuid: 26981d51-bd68-49ee-8b6e-edbac1f74272
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.piligrimage_service.body
+    - node.type.piligrimage_service
+  module:
+    - text
+    - user
+id: node.piligrimage_service.teaser
+targetEntityType: node
+bundle: piligrimage_service
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

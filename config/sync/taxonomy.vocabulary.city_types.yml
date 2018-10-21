@@ -1,0 +1,9 @@
+uuid: 36b06dc0-dd06-49be-ac01-812e3bb47054
+langcode: ru
+status: true
+dependencies: {  }
+name: 'Типы населенных пунктов'
+vid: city_types
+description: ''
+hierarchy: 0
+weight: 0

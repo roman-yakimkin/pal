@@ -1,0 +1,14 @@
+palom_services:
+  version: 1.x
+  css:
+    component:
+      css/palom_services.css: {}
+  js:
+      js/palom_services.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.ui.tabs
+    - core/drupal
+
+

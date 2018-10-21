@@ -1,0 +1,23 @@
+uuid: 805c034a-c1e0-440a-b145-9ffa5373cfd6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_url
+    - node.type.feeding_service
+  module:
+    - link
+id: node.feeding_service.field_site_url
+field_name: field_site_url
+entity_type: node
+bundle: feeding_service
+label: 'Официальный сайт'
+description: 'Официальный сайт организации'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

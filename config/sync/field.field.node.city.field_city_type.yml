@@ -1,0 +1,28 @@
+uuid: 10bbb5f9-ccb7-4970-9db9-0cc7b587903c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city_type
+    - node.type.city
+    - taxonomy.vocabulary.city_types
+id: node.city.field_city_type
+field_name: field_city_type
+entity_type: node
+bundle: city
+label: 'Тип населенного пункта'
+description: 'Укажите тип населенного пункта'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      city_types: city_types
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

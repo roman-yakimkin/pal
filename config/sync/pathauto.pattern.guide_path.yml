@@ -1,0 +1,22 @@
+uuid: cf71ce70-1b55-4948-8502-8b0bc0075aba
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: guide_path
+label: 'Экскурсионные услуги - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'guide/[node:nid]'
+selection_criteria:
+  5368293f-acc8-4c6a-bc1e-1cdda423bdda:
+    id: node_type
+    bundles:
+      guide_service: guide_service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5368293f-acc8-4c6a-bc1e-1cdda423bdda
+selection_logic: and
+weight: -5
+relationships: {  }

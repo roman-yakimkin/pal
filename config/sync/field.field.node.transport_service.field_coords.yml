@@ -1,0 +1,21 @@
+uuid: cf1479ff-f01c-440c-b074-d18dd4869b87
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coords
+    - node.type.transport_service
+  module:
+    - geolocation
+id: node.transport_service.field_coords
+field_name: field_coords
+entity_type: node
+bundle: transport_service
+label: 'Координаты места'
+description: 'Координаты офиса по оказанию транспортных услуг'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

@@ -1,0 +1,11 @@
+uuid: 1708d876-673e-4ca2-9a5a-2807253449f7
+langcode: ru
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.advert_duration
+id: taxonomy_term.advert_duration
+target_entity_type_id: taxonomy_term
+target_bundle: advert_duration
+default_langcode: site_default
+language_alterable: false

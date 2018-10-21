@@ -1,0 +1,44 @@
+yrv_multi_date:
+  version: 1.x
+  js:
+    js/sprintf.js: {}
+    js/yrv_multi_date.js: {}
+  css:
+    component:
+      css/yrv_multi_date.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.ui.datepicker
+    - core/drupal.dialog
+yrv_tree_select_city:
+  version: 1.x
+  js:
+    js/yrv_tree_select_city.js: {}
+  css:
+    component:
+      css/yrv_tree_select_city.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.dialog
+    - palom_libs/lib_easytree
+yrv_tree_select_place:
+  version: 1.x
+  js:
+    js/yrv_tree_select_place.js: {}
+  css:
+    component:
+      css/yrv_tree_select_place.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.dialog
+    - palom_libs/lib_fancytree
+

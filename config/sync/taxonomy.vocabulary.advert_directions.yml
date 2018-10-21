@@ -1,0 +1,9 @@
+uuid: e2520ee2-b8d8-4860-836c-88e0f9cccc84
+langcode: ru
+status: true
+dependencies: {  }
+name: 'Направления поездок'
+vid: advert_directions
+description: 'Направления паломнических поездок'
+hierarchy: 0
+weight: 0

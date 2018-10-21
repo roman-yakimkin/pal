@@ -1,0 +1,26 @@
+uuid: 79028686-24b5-41e9-b5c0-1c7a5a7afe6c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - palomniki_admin
+_core:
+  default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
+id: palomniki_admin_account_menu
+theme: palomniki_admin
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'Меню учётной записи пользователя'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

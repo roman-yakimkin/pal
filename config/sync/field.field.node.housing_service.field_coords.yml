@@ -1,0 +1,21 @@
+uuid: ee49a559-540f-46d7-882c-8e7572a09030
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coords
+    - node.type.housing_service
+  module:
+    - geolocation
+id: node.housing_service.field_coords
+field_name: field_coords
+entity_type: node
+bundle: housing_service
+label: 'Координаты места'
+description: 'Координаты места проживания'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

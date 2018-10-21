@@ -1,0 +1,22 @@
+uuid: 1e6bbd8a-004f-4bb9-88ec-9f1e9872f992
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.guide_service
+  module:
+    - text
+id: node.guide_service.body
+field_name: body
+entity_type: node
+bundle: guide_service
+label: Описание
+description: 'Добавьте здесь описание Ваших услуг'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

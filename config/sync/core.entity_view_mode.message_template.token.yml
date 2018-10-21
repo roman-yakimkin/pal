@@ -1,0 +1,10 @@
+uuid: e53dc761-b112-4196-b009-33cc9b519a4b
+langcode: ru
+status: true
+dependencies:
+  module:
+    - message
+id: message_template.token
+label: Токен
+targetEntityType: message_template
+cache: true

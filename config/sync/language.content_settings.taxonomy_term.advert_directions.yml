@@ -1,0 +1,11 @@
+uuid: ed89bd6b-b683-4107-8d52-0279a1211440
+langcode: ru
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.advert_directions
+id: taxonomy_term.advert_directions
+target_entity_type_id: taxonomy_term
+target_bundle: advert_directions
+default_langcode: site_default
+language_alterable: false

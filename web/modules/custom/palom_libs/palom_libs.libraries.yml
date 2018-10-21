@@ -1,0 +1,28 @@
+lib_lodash:
+  version: 1.x
+  js:
+    js/lodash.min.js: {}
+  dependencies:
+    - core/jquery
+lib_easytree:
+  version: 1.x
+  js:
+    js/jquery.easytree.js: {}
+  css:
+    component:
+      js/skin-lion/ui.easytree.css: {}
+lib_fancytree:
+  version: 1.x
+  js:
+    js/fancytree/jquery.fancytree-all-deps.js: {}
+  css:
+    component:
+      js/fancytree/skin-lion/ui.fancytree.css: {}
+lib_columnizer:
+  version: 1.x
+  js:
+    js/jquery.columnizer.js: {}
+  dependencies:
+    - core/jquery
+
+

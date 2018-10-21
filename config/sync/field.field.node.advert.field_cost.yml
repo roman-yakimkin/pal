@@ -1,0 +1,19 @@
+uuid: de20077e-25e4-41df-9e79-9b893ec0486a
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cost
+    - node.type.advert
+id: node.advert.field_cost
+field_name: field_cost
+entity_type: node
+bundle: advert
+label: Стоимость
+description: 'Стоимость паломнической поездки'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,28 @@
+uuid: e1e1c6d7-3df3-4d50-a159-7c7f6d531b74
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sacred_places
+    - node.type.housing_service
+    - node.type.sacred_place
+id: node.housing_service.field_sacred_places
+field_name: field_sacred_places
+entity_type: node
+bundle: housing_service
+label: 'Святые места'
+description: "Ближайшие святые места, при поездкам к которым паломники могут воспользоваться вашими услугами\r\n"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sacred_place: sacred_place
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

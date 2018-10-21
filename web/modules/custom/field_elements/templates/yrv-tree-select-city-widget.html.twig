@@ -1,0 +1,24 @@
+<div class="yrv-tree-select-city-widget" id="yrv-tree-select-city-widget-{{ field_name }}">
+    <div class="yrv-tree-select-city-left">
+        <select name="sel_countries">
+        </select>
+        <div class="yrv-tree-select-city-tree" id="yrv-tree-select-city-{{ field_name }}">
+        </div>
+    </div>
+    <div class="yrv-tree-select-city-buttons">
+        <button class="yrv-button-add-city">
+            {% trans %}
+            Add a city
+            {% endtrans %}
+        </button>
+        <button class="yrv-button-remove-city">
+            {% trans %}
+            Remove a city
+            {% endtrans %}
+        </button>
+    </div>
+    <div class="yrv-tree-select-city-listbox">
+        <select name="sel_cities" size="10">
+        </select>
+    </div>
+</div>

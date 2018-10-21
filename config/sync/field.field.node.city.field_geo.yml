@@ -1,0 +1,21 @@
+uuid: 4dba5e32-7770-44cc-bd75-ab29aeeaca10
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geo
+    - node.type.city
+  module:
+    - field_elements
+id: node.city.field_geo
+field_name: field_geo
+entity_type: node
+bundle: city
+label: Местоположение
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_palom_geo

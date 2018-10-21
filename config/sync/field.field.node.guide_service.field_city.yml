@@ -1,0 +1,25 @@
+uuid: 448d432e-ea6d-4047-a408-9e8d329ab68b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.guide_service
+id: node.guide_service.field_city
+field_name: field_city
+entity_type: node
+bundle: guide_service
+label: 'Населенный пункт'
+description: 'Ваш населенный пункт'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: cities_for_reference
+      display_name: entity_reference_cities
+      arguments: {  }
+field_type: entity_reference

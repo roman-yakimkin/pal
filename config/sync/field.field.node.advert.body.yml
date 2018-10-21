@@ -1,0 +1,22 @@
+uuid: fea6db71-2ced-4ff5-b21f-40a48f0dd849
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.advert
+  module:
+    - text
+id: node.advert.body
+field_name: body
+entity_type: node
+bundle: advert
+label: 'Описание маршрута'
+description: 'Описание маршрута паломнической поездки'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

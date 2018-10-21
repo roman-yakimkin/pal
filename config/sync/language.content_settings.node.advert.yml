@@ -1,0 +1,11 @@
+uuid: 5ac3468b-5ff7-4e72-8041-707dc94c6ef8
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.advert
+id: node.advert
+target_entity_type_id: node
+target_bundle: advert
+default_langcode: site_default
+language_alterable: false

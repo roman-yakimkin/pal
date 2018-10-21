@@ -1,0 +1,11 @@
+uuid: bc6d4153-01c5-4ce9-9a57-19726e2a03d5
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.piligrimage_service
+id: node.piligrimage_service
+target_entity_type_id: node
+target_bundle: piligrimage_service
+default_langcode: site_default
+language_alterable: false

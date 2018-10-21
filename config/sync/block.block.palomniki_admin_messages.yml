@@ -1,0 +1,22 @@
+uuid: 99be3ee9-5ce3-4745-a2cd-f3537ec36f43
+langcode: ru
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - palomniki_admin
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: palomniki_admin_messages
+theme: palomniki_admin
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Сообщения статуса'
+  provider: system
+  label_display: '0'
+visibility: {  }

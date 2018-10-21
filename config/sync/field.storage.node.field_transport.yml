@@ -1,0 +1,20 @@
+uuid: 56b3c2d2-8719-4aa3-97e3-d357177ef8f6
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_transport
+field_name: field_transport
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

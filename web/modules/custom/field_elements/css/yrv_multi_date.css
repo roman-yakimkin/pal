@@ -1,0 +1,32 @@
+.yrv-multi-date-widget {
+  margin-bottom: 10px;
+}
+
+.yrv-multi-date-calendar {
+  float: left; 
+  margin: 0px 5px 0px 0px;
+}
+
+.yrv-multi-date-buttons {
+  float: left;
+  width: 130px;
+  margin: 50px 10px 50px 10px;
+}
+
+.yrv-multi-date-buttons button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 120px;
+}
+
+.yrv-multi-date-listbox select{
+  margin: 0px;
+  width: 130px;
+//  overflow-y: auto;
+}
+
+.ui-datepicker .ui-state-active {
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+}

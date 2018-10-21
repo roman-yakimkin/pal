@@ -1,0 +1,23 @@
+uuid: 44b8e27a-24de-47ba-acac-37c7c5350860
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_url
+    - node.type.guide_service
+  module:
+    - link
+id: node.guide_service.field_site_url
+field_name: field_site_url
+entity_type: node
+bundle: guide_service
+label: 'Официальный сайт'
+description: 'Ваш официальный сайт (при наличии такового)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

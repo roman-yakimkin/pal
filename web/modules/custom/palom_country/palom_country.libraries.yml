@@ -1,0 +1,14 @@
+palom_country:
+  version: 1.x
+  js:
+    js/columnizer.js: {}
+  css:
+    component:
+      css/palom_country.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - palom_libs/lib_columnizer
+
+

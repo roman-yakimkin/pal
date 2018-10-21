@@ -1,0 +1,27 @@
+uuid: 5bfd73f8-9a0d-4801-8650-a769b4c141fd
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attached_files
+    - node.type.forum
+  module:
+    - file
+id: node.forum.field_attached_files
+field_name: field_attached_files
+entity_type: node
+bundle: forum
+label: Вложения
+description: 'Прикрепленные файлы'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt doc docx png jpg jpeg gif xls xlsx odt bmp'
+  max_filesize: '30 MB'
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

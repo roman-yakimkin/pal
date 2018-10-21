@@ -1,0 +1,18 @@
+uuid: a9ddbe09-8111-4d76-b486-5b5e78f2d8ce
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.transport_service
+id: node.transport_service.title
+field_name: title
+entity_type: node
+bundle: transport_service
+label: Название
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

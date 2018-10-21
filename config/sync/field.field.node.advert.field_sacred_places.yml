@@ -1,0 +1,28 @@
+uuid: 37a57c7a-6bc8-4b7e-989e-daaf4debe823
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sacred_places
+    - node.type.advert
+    - node.type.sacred_place
+id: node.advert.field_sacred_places
+field_name: field_sacred_places
+entity_type: node
+bundle: advert
+label: 'Святые места'
+description: 'Список святых мест'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sacred_place: sacred_place
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

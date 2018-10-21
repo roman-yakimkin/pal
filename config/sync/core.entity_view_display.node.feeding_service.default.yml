@@ -1,0 +1,129 @@
+uuid: ea03b15b-bea0-4f43-a83a-b3e0a86bdb96
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.feeding_service.body
+    - field.field.node.feeding_service.field_attached_files
+    - field.field.node.feeding_service.field_avg_cost
+    - field.field.node.feeding_service.field_avg_cost_remark
+    - field.field.node.feeding_service.field_city
+    - field.field.node.feeding_service.field_coords
+    - field.field.node.feeding_service.field_country
+    - field.field.node.feeding_service.field_phones
+    - field.field.node.feeding_service.field_photogallery
+    - field.field.node.feeding_service.field_sacred_places
+    - field.field.node.feeding_service.field_site_url
+    - node.type.feeding_service
+  module:
+    - cshs
+    - file
+    - geolocation
+    - image
+    - link
+    - text
+    - user
+id: node.feeding_service.default
+targetEntityType: node
+bundle: feeding_service
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_attached_files:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_avg_cost:
+    weight: 107
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_avg_cost_remark:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_city:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_coords:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_country:
+    weight: 106
+    label: above
+    settings:
+      linked: '1'
+      separator: ' » '
+    third_party_settings: {  }
+    type: cshs_full_hierarchy
+    region: content
+  field_phones:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_photogallery:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_sacred_places:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_site_url:
+    weight: 104
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

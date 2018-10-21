@@ -1,0 +1,10 @@
+name: Palom Service
+type: module
+description: A module with selection and filtration of different services.
+package: YRV Palom
+# core: 8.x
+dependencies:
+
+version: '8.x-1.x'
+core: '8.x'
+project: 'yrv_palom'

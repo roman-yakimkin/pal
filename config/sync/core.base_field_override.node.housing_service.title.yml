@@ -1,0 +1,18 @@
+uuid: 72fcfc72-66cf-4ce0-8d82-a7a277460f82
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.housing_service
+id: node.housing_service.title
+field_name: title
+entity_type: node
+bundle: housing_service
+label: Название
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

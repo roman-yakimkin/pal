@@ -1,0 +1,11 @@
+uuid: 6d0ed133-09ed-4576-a112-e27bec61a4e6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.transport_service
+id: node.transport_service
+target_entity_type_id: node
+target_bundle: transport_service
+default_langcode: site_default
+language_alterable: false

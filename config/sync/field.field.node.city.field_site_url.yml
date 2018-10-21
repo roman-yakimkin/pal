@@ -1,0 +1,23 @@
+uuid: 804bd005-3913-4499-8c0a-5b93c01bc35b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_url
+    - node.type.city
+  module:
+    - link
+id: node.city.field_site_url
+field_name: field_site_url
+entity_type: node
+bundle: city
+label: 'Официальный сайт'
+description: 'Официальный сайт населенного пункта'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

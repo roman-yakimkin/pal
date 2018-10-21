@@ -1,0 +1,27 @@
+uuid: 520fef91-48e3-456d-a7fd-28b6571b44fa
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attached_files
+    - node.type.piligrimage_service
+  module:
+    - file
+id: node.piligrimage_service.field_attached_files
+field_name: field_attached_files
+entity_type: node
+bundle: piligrimage_service
+label: 'Вложенные файлы'
+description: 'Несколько вложенных файлов разного типа, например, образец договора или программа поездки'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt doc docx png jpg jpeg gif xls xlsx odt bmp'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,28 @@
+uuid: 3a57a4cd-504a-43d1-a465-09261dc125fa
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country
+    - node.type.piligrimage_service
+    - taxonomy.vocabulary.countries
+id: node.piligrimage_service.field_country
+field_name: field_country
+entity_type: node
+bundle: piligrimage_service
+label: Страна
+description: 'Выбрать страну и при необходимости регион'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      countries: countries
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

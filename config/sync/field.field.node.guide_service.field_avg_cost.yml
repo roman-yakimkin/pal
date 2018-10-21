@@ -1,0 +1,23 @@
+uuid: 934afa62-b927-4ce0-8226-6ac1bce604b6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_avg_cost
+    - node.type.guide_service
+id: node.guide_service.field_avg_cost
+field_name: field_avg_cost
+entity_type: node
+bundle: guide_service
+label: 'Средняя стоимость за экскурсию (руб.)'
+description: 'Укажите среднюю стоимость за экскурсию (в рублях РФ)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: руб.
+field_type: integer

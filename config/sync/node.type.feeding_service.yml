@@ -1,0 +1,18 @@
+uuid: f3ea845c-53b1-43f8-84c8-243fa6440a66
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Питание паломников'
+type: feeding_service
+description: 'Услуги по питанию паломников'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,27 @@
+palom_country_geo_cities:
+  path: 'geo/{geo_id}/cities'
+  defaults:
+    _controller: '\Drupal\palom_country\Controller\GeoController::cities'
+  requirements:
+    _permission: 'access content'
+
+palom_country_geo_places:
+  path: 'geo/{geo_id}/places'
+  defaults:
+    _controller: '\Drupal\palom_country\Controller\GeoController::places'
+  requirements:
+    _permission: 'access content'
+
+palom_country_geo_orgn:
+  path: 'geo/{geo_id}/services'
+  defaults:
+    _controller: '\Drupal\palom_country\Controller\GeoController::services'
+  requirements:
+    _permission: 'access content'
+
+palom_country_test:
+  path: 'test'
+  defaults:
+    _controller: '\Drupal\palom_country\Controller\GeoController::test'
+  requirements:
+    _permission: 'access content'

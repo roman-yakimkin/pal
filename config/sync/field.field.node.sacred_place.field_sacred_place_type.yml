@@ -1,0 +1,28 @@
+uuid: f273634d-5a0a-416f-af6a-57cb87f93065
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sacred_place_type
+    - node.type.sacred_place
+    - taxonomy.vocabulary.sacred_place_type
+id: node.sacred_place.field_sacred_place_type
+field_name: field_sacred_place_type
+entity_type: node
+bundle: sacred_place
+label: 'Тип святого места'
+description: 'Выберите тип святого места'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sacred_place_type: sacred_place_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

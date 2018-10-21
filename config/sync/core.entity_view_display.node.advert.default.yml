@@ -1,0 +1,120 @@
+uuid: d900b325-3ddc-4456-9442-21f390f23a4e
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.advert.body
+    - field.field.node.advert.field_advert_city_from
+    - field.field.node.advert.field_advert_dates
+    - field.field.node.advert.field_advert_direction
+    - field.field.node.advert.field_advert_duration
+    - field.field.node.advert.field_advert_route
+    - field.field.node.advert.field_cost
+    - field.field.node.advert.field_cost_comment
+    - field.field.node.advert.field_sacred_places
+    - field.field.node.advert.field_service
+    - field.field.node.advert.field_transport
+    - node.type.advert
+  module:
+    - datetime
+    - text
+    - user
+id: node.advert.default
+targetEntityType: node
+bundle: advert
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_advert_city_from:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_advert_dates:
+    weight: 113
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_advert_direction:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_advert_duration:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_advert_route:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cost:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cost_comment:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_sacred_places:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_service:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_transport:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

@@ -1,0 +1,23 @@
+uuid: 92528738-4285-4eba-ad27-3f4c2109c378
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_avg_cost
+    - node.type.feeding_service
+id: node.feeding_service.field_avg_cost
+field_name: field_avg_cost
+entity_type: node
+bundle: feeding_service
+label: 'Средняя стоимость обеда (руб.)'
+description: 'Средняя стоимость обеда в рублях'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: руб.
+field_type: integer

@@ -1,0 +1,22 @@
+uuid: beb0ed7c-6af5-4f89-abaa-9f6d91f5ef7b
+langcode: ru
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - palomniki_admin
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: palomniki_admin_content
+theme: palomniki_admin
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Содержимое страницы'
+  provider: system
+  label_display: '0'
+visibility: {  }

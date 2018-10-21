@@ -1,0 +1,31 @@
+uuid: 75576d13-04fa-4c56-b15c-1ced96beb24a
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.countries.field_country_id
+    - taxonomy.vocabulary.countries
+  module:
+    - text
+id: taxonomy_term.countries.default
+targetEntityType: taxonomy_term
+bundle: countries
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_country_id:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

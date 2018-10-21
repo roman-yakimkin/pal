@@ -1,0 +1,23 @@
+uuid: 387e33ce-0164-4d35-9a3f-549d4e348d91
+langcode: ru
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: forum_board_path
+label: 'Раздел форума - шаблон пути'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'forum/board-[term:tid]'
+selection_criteria:
+  5367cfd8-35ec-44b4-9afe-1a348003c2ec:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      forums: forums
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 5367cfd8-35ec-44b4-9afe-1a348003c2ec
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,18 @@
+uuid: d4060624-3cd1-4c4e-9da1-ac4130a01c94
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Паломническая служба'
+type: piligrimage_service
+description: 'Информация об одной паломнической службе'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

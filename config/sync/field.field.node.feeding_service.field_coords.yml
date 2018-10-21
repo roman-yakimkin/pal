@@ -1,0 +1,21 @@
+uuid: 930d7295-ad95-4c3e-b1d4-30b7cd164e7e
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coords
+    - node.type.feeding_service
+  module:
+    - geolocation
+id: node.feeding_service.field_coords
+field_name: field_coords
+entity_type: node
+bundle: feeding_service
+label: 'Координаты места'
+description: 'Координаты пункта питания'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

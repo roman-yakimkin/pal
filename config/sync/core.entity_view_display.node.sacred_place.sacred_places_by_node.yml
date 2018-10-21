@@ -1,0 +1,43 @@
+uuid: b3d61d43-ee7d-494c-834a-608211cc85d6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.sacred_places_by_node
+    - field.field.node.sacred_place.body
+    - field.field.node.sacred_place.field_city
+    - field.field.node.sacred_place.field_coords
+    - field.field.node.sacred_place.field_country
+    - field.field.node.sacred_place.field_sacred_place_type
+    - field.field.node.sacred_place.field_site_url
+    - node.type.sacred_place
+  module:
+    - field_elements
+    - user
+id: node.sacred_place.sacred_places_by_node
+targetEntityType: node
+bundle: sacred_place
+mode: sacred_places_by_node
+content:
+  field_city:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: yrv_full_city_formatter
+    region: content
+  field_sacred_place_type:
+    weight: 0
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  body: true
+  field_coords: true
+  field_country: true
+  field_site_url: true
+  langcode: true
+  links: true

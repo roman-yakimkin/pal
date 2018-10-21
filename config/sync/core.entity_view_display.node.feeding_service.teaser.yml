@@ -1,0 +1,29 @@
+uuid: ba696496-4851-42d3-99f7-8957c707a0a3
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.feeding_service.body
+    - node.type.feeding_service
+  module:
+    - text
+    - user
+id: node.feeding_service.teaser
+targetEntityType: node
+bundle: feeding_service
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

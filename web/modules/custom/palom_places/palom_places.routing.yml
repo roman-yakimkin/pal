@@ -1,0 +1,6 @@
+palom_places_geo_places:
+  path: 'places'
+  defaults:
+    _controller: '\Drupal\palom_places\Controller\PlacesController::places'
+  requirements:
+    _permission: 'access content'

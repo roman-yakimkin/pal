@@ -1,0 +1,18 @@
+uuid: 5f1ef1a6-bd3b-4704-92e0-b83f9664bd9f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.trawel_review
+id: node.trawel_review.title
+field_name: title
+entity_type: node
+bundle: trawel_review
+label: Название
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

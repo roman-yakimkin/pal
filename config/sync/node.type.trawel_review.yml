@@ -1,0 +1,18 @@
+uuid: d9bdff56-8bd6-41d1-b217-8d2dabc05524
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Отзыв о поездке'
+type: trawel_review
+description: 'Отзыв об одной паломнической поездке'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

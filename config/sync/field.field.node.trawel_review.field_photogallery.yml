@@ -1,0 +1,38 @@
+uuid: bd3a8b04-1962-48d8-aeab-53e4c7dacece
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photogallery
+    - node.type.trawel_review
+  module:
+    - image
+id: node.trawel_review.field_photogallery
+field_name: field_photogallery
+entity_type: node
+bundle: trawel_review
+label: Фотогалерея
+description: 'Фотографии с поездки'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

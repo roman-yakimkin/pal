@@ -1,0 +1,19 @@
+uuid: 5cdba869-4a2d-41f7-9dfd-c555d361d47d
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_avg_cost_remark
+    - node.type.transport_service
+id: node.transport_service.field_avg_cost_remark
+field_name: field_avg_cost_remark
+entity_type: node
+bundle: transport_service
+label: 'Примечание к стоимости'
+description: 'Здесь вы можете указать примечание к средней стоимости'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

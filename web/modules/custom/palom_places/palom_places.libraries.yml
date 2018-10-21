@@ -1,0 +1,11 @@
+palom_places:
+  version: 1.x
+  css:
+    component:
+      css/palom_places.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+

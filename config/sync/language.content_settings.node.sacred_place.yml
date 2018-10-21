@@ -1,0 +1,11 @@
+uuid: d12392c6-57ec-4d45-83af-a7d5f8ce1f44
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.sacred_place
+id: node.sacred_place
+target_entity_type_id: node
+target_bundle: sacred_place
+default_langcode: site_default
+language_alterable: false

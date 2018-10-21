@@ -1,0 +1,23 @@
+uuid: fca19773-0bc7-4096-b2a8-bc6bdc9f527a
+langcode: ru
+status: true
+dependencies:
+  enforced:
+    module:
+      - forum
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: ERCHDVB33lub-cz7DSYR7HuBlYJjmVUdPw0IIYa3ZXc
+name: 'Тема форума'
+type: forum
+description: '<em>Тема форума</em> начинает новую дискуссию в одном из разделов форума.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

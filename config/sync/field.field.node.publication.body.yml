@@ -1,0 +1,22 @@
+uuid: 8e3ed75b-cceb-44eb-8df8-d77ace6a2a16
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.publication
+  module:
+    - text
+id: node.publication.body
+field_name: body
+entity_type: node
+bundle: publication
+label: Текст
+description: 'Текст публикации с аннотацией'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

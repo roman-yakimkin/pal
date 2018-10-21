@@ -1,0 +1,12 @@
+palom_advert.adverts:
+  path: 'adverts'
+  defaults:
+    _controller: '\Drupal\palom_advert\Controller\AdvertController::adverts'
+  requirements:
+    _permission: 'access content'
+palom_advert.autocomplete_to:
+  path: '/adverts-autocomplete-to'
+  defaults:
+    _controller: '\Drupal\palom_advert\Controller\AdvertAutocomplete::autocompleteTo'
+  requirements:
+    _permission: 'access content'

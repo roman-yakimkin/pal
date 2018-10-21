@@ -1,0 +1,29 @@
+uuid: 03206025-ddbb-432a-8836-8e5854e9d33a
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.guide_service.body
+    - node.type.guide_service
+  module:
+    - text
+    - user
+id: node.guide_service.teaser
+targetEntityType: node
+bundle: guide_service
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

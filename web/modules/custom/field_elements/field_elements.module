@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function field_elements_theme($existing, $type, $theme, $path)
+{
+    return [
+        'yrv_multi_date_widget' => [
+            'variables' => [
+                'field_name' => NULL,
+            ],
+            'template' => 'yrv-multi-date-widget',
+        ],
+        'yrv_tree_select_city_widget' => [
+            'variables' => [
+                'field_name' => NULL,
+            ],
+            'template' => 'yrv-tree-select-city-widget',
+        ],
+        'yrv_tree_select_place_widget' => [
+            'variables' => [
+                'field_name' => NULL,
+            ],
+            'template' => 'yrv-tree-select-place-widget',
+        ],
+    ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function field_elements_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+//  vdp($form_id);
+//  vdp($form);
+}

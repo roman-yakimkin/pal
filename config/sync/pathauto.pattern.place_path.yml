@@ -1,0 +1,22 @@
+uuid: 86488686-f04b-40ef-a603-dec5673ece6c
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: place_path
+label: 'Святое место - шаблон поездки'
+type: 'canonical_entities:node'
+pattern: 'place/[node:nid]'
+selection_criteria:
+  a54f5ce9-b9f8-4a94-b65b-4922664989db:
+    id: node_type
+    bundles:
+      sacred_place: sacred_place
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a54f5ce9-b9f8-4a94-b65b-4922664989db
+selection_logic: and
+weight: -5
+relationships: {  }

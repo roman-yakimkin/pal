@@ -1,0 +1,29 @@
+uuid: 3fbb68c2-9067-4fde-963a-60258709424a
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sacred_place.body
+    - node.type.sacred_place
+  module:
+    - text
+    - user
+id: node.sacred_place.teaser
+targetEntityType: node
+bundle: sacred_place
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

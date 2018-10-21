@@ -1,0 +1,25 @@
+uuid: 0ca32a18-d3e1-4011-bda6-9dcbd5260708
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.feeding_service
+id: node.feeding_service.field_city
+field_name: field_city
+entity_type: node
+bundle: feeding_service
+label: 'Населенный пункт'
+description: 'Населенный пункт, где расположена данная организация. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: cities_for_reference
+      display_name: entity_reference_cities
+      arguments: {  }
+field_type: entity_reference

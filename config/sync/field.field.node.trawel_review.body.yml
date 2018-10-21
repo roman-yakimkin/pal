@@ -1,0 +1,22 @@
+uuid: fe3b123c-afd3-4ce5-bf85-dbb56ebfd93f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.trawel_review
+  module:
+    - text
+id: node.trawel_review.body
+field_name: body
+entity_type: node
+bundle: trawel_review
+label: Текст
+description: 'Текст отзыва о паломнической поездке'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

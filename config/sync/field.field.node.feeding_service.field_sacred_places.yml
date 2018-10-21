@@ -1,0 +1,28 @@
+uuid: 63d37ee4-8259-4c50-a74d-318a545c216c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sacred_places
+    - node.type.feeding_service
+    - node.type.sacred_place
+id: node.feeding_service.field_sacred_places
+field_name: field_sacred_places
+entity_type: node
+bundle: feeding_service
+label: 'Святые места'
+description: 'Ближайшие святые места, при поездкам к которым паломники могут воспользоваться вашими услугами'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sacred_place: sacred_place
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

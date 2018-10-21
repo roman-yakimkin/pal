@@ -1,0 +1,21 @@
+uuid: f17bda6f-f7c5-4501-af3b-1f79a2aa0004
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cost_comment
+    - node.type.advert
+  module:
+    - text
+id: node.advert.field_cost_comment
+field_name: field_cost_comment
+entity_type: node
+bundle: advert
+label: 'Комментарий к стоимости'
+description: 'Комментарий к стоимости поездки'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

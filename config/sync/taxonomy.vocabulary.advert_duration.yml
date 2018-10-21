@@ -1,0 +1,9 @@
+uuid: fd8a4d31-cb54-4142-b180-8ca69e258bb0
+langcode: ru
+status: true
+dependencies: {  }
+name: 'Длительность поездок'
+vid: advert_duration
+description: 'Длительность поездок'
+hierarchy: 0
+weight: 0

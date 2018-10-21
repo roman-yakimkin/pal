@@ -1,0 +1,28 @@
+uuid: f36656b7-8179-4101-af2d-4a93b5075d35
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sacred_place
+    - node.type.sacred_place
+    - node.type.trawel_review
+id: node.trawel_review.field_sacred_place
+field_name: field_sacred_place
+entity_type: node
+bundle: trawel_review
+label: 'Святые места'
+description: 'Святые места и объекты, посещенные в процессе паломничества'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sacred_place: sacred_place
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

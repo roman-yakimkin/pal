@@ -1,0 +1,27 @@
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+
+<div class="description">
+    This is form description
+    {{ form.es_wrapper }}
+</div>
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#tab-services-by-city">По странам и городам</a></li>
+    <li><a data-toggle="tab" href="#tab-services-by-place">По святым местам</a></li>
+</ul>
+<div class="tab-content">
+    <div id="tab-services-by-city" class="tab-pane fade in active">
+        {{ form.country }}
+        {{ form.region_wrapper }}
+        {{ form.city_wrapper }}
+        {{ form.services_geo }}
+        {{ form.btn_services_geo_add_more_wrapper }}
+    </div>
+    <div id="tab-services-by-place" class="tab-pane fade">
+        {{ form.autocomplete_places }}
+        {{ form.services_by_place }}
+        {{ form.btn_services_by_place_add_more_wrapper }}
+    </div>
+</div>

@@ -1,0 +1,22 @@
+uuid: 92d547ca-e371-4eff-9e02-6b053a52fa85
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.sacred_place
+  module:
+    - text
+id: node.sacred_place.body
+field_name: body
+entity_type: node
+bundle: sacred_place
+label: Описание
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

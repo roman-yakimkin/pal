@@ -1,0 +1,18 @@
+uuid: c21f8fad-c181-4738-bd45-81970190176b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.sacred_place
+id: node.sacred_place.title
+field_name: title
+entity_type: node
+bundle: sacred_place
+label: 'Название святого места'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

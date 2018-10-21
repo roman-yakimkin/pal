@@ -1,0 +1,13 @@
+field_elements.ajax_region_city:
+  path: 'palom-get-info/get-region-and-city-by-geo/{geo_id}'
+  defaults:
+    _controller: 'Drupal\field_elements\Controller\FieldWidgetsController::getRegionCityByGeo'
+  requirements:
+    _permission: 'access content'
+
+field_elements.ajax_region_city_place:
+  path: 'palom-get-info/get-region-city-place-by-geo/{geo_id}'
+  defaults:
+    _controller: 'Drupal\field_elements\Controller\FieldWidgetsController::getRegionCityPlaceByGeo'
+  requirements:
+    _permission: 'access content'

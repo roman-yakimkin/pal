@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function palom_services_theme($existing, $type, $theme, $path)
+{
+    return [
+        'services_form' => [
+            'render element' => 'form',
+//            'file' => 'services_form.theme.inc',
+        ],
+    ];
+}

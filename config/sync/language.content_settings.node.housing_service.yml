@@ -1,0 +1,11 @@
+uuid: 87233661-30f6-444f-afa2-9eeb811eea72
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.housing_service
+id: node.housing_service
+target_entity_type_id: node
+target_bundle: housing_service
+default_langcode: site_default
+language_alterable: false

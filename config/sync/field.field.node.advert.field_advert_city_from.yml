@@ -1,0 +1,25 @@
+uuid: 5f0ce079-a14e-4f6a-b570-2fab0248f975
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_advert_city_from
+    - node.type.advert
+id: node.advert.field_advert_city_from
+field_name: field_advert_city_from
+entity_type: node
+bundle: advert
+label: 'Населенные пункты отправления'
+description: 'Список населенных пунктов, откуда отправляется поездка '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: cities_for_reference
+      display_name: entity_reference_cities
+      arguments: {  }
+field_type: entity_reference

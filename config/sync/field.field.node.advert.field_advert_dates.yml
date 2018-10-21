@@ -1,0 +1,21 @@
+uuid: a240684f-13ab-4117-94e4-583bf025de6b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_advert_dates
+    - node.type.advert
+  module:
+    - datetime
+id: node.advert.field_advert_dates
+field_name: field_advert_dates
+entity_type: node
+bundle: advert
+label: 'Даты поездки'
+description: 'Задайте даты паломнической поездки'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

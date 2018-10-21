@@ -1,0 +1,9 @@
+uuid: 312a75db-0a14-4afd-ab05-65a852a2c6b9
+langcode: ru
+status: true
+dependencies: {  }
+name: 'Транспорт для поездок'
+vid: advert_transport
+description: 'Транспорт для поездок'
+hierarchy: 0
+weight: 0

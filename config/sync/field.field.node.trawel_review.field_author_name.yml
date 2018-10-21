@@ -1,0 +1,19 @@
+uuid: 7cc7378d-c54b-45a4-8d0c-a951b65beb53
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author_name
+    - node.type.trawel_review
+id: node.trawel_review.field_author_name
+field_name: field_author_name
+entity_type: node
+bundle: trawel_review
+label: 'Имя автора'
+description: 'Имя автора описания, если оно не добавлено лично автором'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

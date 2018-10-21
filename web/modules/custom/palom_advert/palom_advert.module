@@ -1,0 +1,86 @@
+<?php
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+use Drupal\palom_advert\PalomAdvert;
+
+/**
+ * Implements hook_form_alter().
+ */
+function palom_advert_form_alter(array &$form, FormStateInterface $form_state, $form_id)
+{
+    if (in_array($form_id, ['node_advert_form', 'node_advert_edit_form'])){
+
+        $form['advert_date_types'] = [
+            '#type' => 'select',
+            '#options' => [
+                '0' => 'Список дат',
+                '1' => 'По заявке',
+                '2' => 'По мере комплектования группы',
+            ],
+            '#title' => 'Время поездки',
+            '#description' => 'Задайте время поездки',
+            '#weight' => 17,
+            '#default_value' => 0,
+            '#id' => 'select_advert_date_types'
+        ];
+
+        // В случае редактирования формы
+        if ($form_id == 'node_advert_edit_form'){
+            $path_args = explode('/', \Drupal::request()->getPathInfo());
+            $nid = $path_args[2];
+            $advert_date_type = PalomAdvert::GetAdvertDateType($nid);
+            $form['advert_date_types']['#default_value'] = $advert_date_type;
+            $form['#attached']['drupalSettings']['advert_date_type'] = $advert_date_type;
+        }
+
+        $form['#group_children']['advert_date_types'] = 'group_obsaa_informacia';
+
+        $form['#validate'][] = '_palom_advert_form_validate';
+
+        /*
+        foreach (array_keys($form['actions']) as $action) {
+            if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+                $form['actions'][$action]['#submit'][] = '_palom_advert_form_submit';
+            }
+        }
+        */
+    }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function palom_advert_page_attachments(array &$attachments)
+{
+    $attachments['#attached']['library'][] = 'palom_advert/yrv_advert_dates';
+}
+
+/**
+ * Валидация формы
+ * @param array $form
+ * @param FormStateInterface $form_state
+ */
+function _palom_advert_form_validate(array &$form, FormStateInterface $form_state){
+    $date_type = $form_state->getValue('advert_date_types');
+
+    $dates_array = [];
+
+    // Если была поездка с датами, то нужно проверить, чтобы хотя бы одна дата была добавлена
+    if ($date_type == 0){
+        if (trim($form_state->getValue('field_advert_dates')['dates']['dates_array']) == '')
+           $form_state->setErrorByName('sel_advert_dates','Вам нужно ввести хотя бы одну дату поездки');
+    }
+
+    // Поездка по заявке
+    if ($date_type == 1){
+        $dates_array['dates']['dates_array'] = '2500-01-01';
+        $form_state->setValue('field_advert_dates', $dates_array);
+    }
+
+    // Поездка по мере комплектования группы
+    if ($date_type == 2){
+        $dates_array['dates']['dates_array'] = '2600-01-01';
+        $form_state->setValue('field_advert_dates', $dates_array);
+
+    }
+}

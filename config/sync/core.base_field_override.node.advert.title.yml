@@ -1,0 +1,18 @@
+uuid: e93fa4b8-a1bb-4354-b317-434a5d389041
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.advert
+id: node.advert.title
+field_name: title
+entity_type: node
+bundle: advert
+label: Название
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

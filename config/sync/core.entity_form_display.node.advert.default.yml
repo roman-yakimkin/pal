@@ -1,0 +1,169 @@
+uuid: cfa09a59-d54f-4ef5-bf38-f79c7f061acb
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.advert.body
+    - field.field.node.advert.field_advert_city_from
+    - field.field.node.advert.field_advert_dates
+    - field.field.node.advert.field_advert_direction
+    - field.field.node.advert.field_advert_duration
+    - field.field.node.advert.field_advert_route
+    - field.field.node.advert.field_cost
+    - field.field.node.advert.field_cost_comment
+    - field.field.node.advert.field_sacred_places
+    - field.field.node.advert.field_service
+    - field.field.node.advert.field_transport
+    - node.type.advert
+  module:
+    - datetime
+    - field_elements
+    - path
+    - text
+id: node.advert.default
+targetEntityType: node
+bundle: advert
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 6
+    settings:
+      rows: 15
+      placeholder: ''
+      summary_rows: 3
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_advert_city_from:
+    weight: 122
+    settings: {  }
+    third_party_settings: {  }
+    type: yrv_tree_select_city
+    region: content
+  field_advert_dates:
+    weight: 123
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_advert_direction:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_advert_duration:
+    weight: 22
+    settings:
+      match_operator: CONTAINS
+      size: 90
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_advert_route:
+    weight: 20
+    settings:
+      size: 90
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cost:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cost_comment:
+    weight: 9
+    settings:
+      rows: 15
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_sacred_places:
+    weight: 124
+    settings: {  }
+    third_party_settings: {  }
+    type: yrv_tree_select_place
+    region: content
+  field_service:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_transport:
+    weight: 19
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 121
+    third_party_settings: {  }
+    region: content
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 17
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,22 @@
+uuid: 2e7443b2-2361-4798-b51c-04ddbbc68eb4
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.piligrimage_service
+  module:
+    - text
+id: node.piligrimage_service.body
+field_name: body
+entity_type: node
+bundle: piligrimage_service
+label: Описание
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

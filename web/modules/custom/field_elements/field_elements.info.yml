@@ -1,0 +1,14 @@
+name: Field Elements
+type: module
+description: Widgets and Formatters for some fields.
+package: YRV Palom
+# core: 8.x
+dependencies:
+  - drupal:node
+  - drupal:datetime
+  - palom_libs:palom_libs
+
+# Information added by Drupal.org packaging script on 2017-03-15
+version: '8.x-1.x'
+core: '8.x'
+project: 'yrv_palom'

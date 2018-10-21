@@ -1,0 +1,10 @@
+uuid: cac3a8c5-870c-4452-8342-cb3b778bbb78
+langcode: ru
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.token
+label: Токен
+targetEntityType: contact_message
+cache: true

@@ -1,0 +1,18 @@
+uuid: 555f5ed0-9ae1-4814-ad81-f5ded080ba43
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Маршрут поездки'
+type: advert
+description: 'Один маршрут паломнической поездки'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

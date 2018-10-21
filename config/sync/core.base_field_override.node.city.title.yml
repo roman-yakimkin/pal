@@ -1,0 +1,18 @@
+uuid: dd0f6898-f4e1-4b38-a522-6efc092d239e
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.city
+id: node.city.title
+field_name: title
+entity_type: node
+bundle: city
+label: Название
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,28 @@
+uuid: a269026f-0411-4ce7-8659-aa6d2f3e4d70
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service
+    - node.type.piligrimage_service
+    - node.type.trawel_review
+id: node.trawel_review.field_service
+field_name: field_service
+entity_type: node
+bundle: trawel_review
+label: Организатор
+description: 'Организаторы паломнический поездки'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      piligrimage_service: piligrimage_service
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

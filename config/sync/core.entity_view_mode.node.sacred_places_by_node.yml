@@ -1,0 +1,10 @@
+uuid: 2769c89c-e566-48e6-9f12-fd12d708b0bb
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: node.sacred_places_by_node
+label: 'Святые места в подчиненной таблице'
+targetEntityType: node
+cache: true

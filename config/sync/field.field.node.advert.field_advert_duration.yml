@@ -1,0 +1,28 @@
+uuid: 8dcb190b-d64e-4dd4-8181-6f5e3f6a350e
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_advert_duration
+    - node.type.advert
+    - taxonomy.vocabulary.advert_duration
+id: node.advert.field_advert_duration
+field_name: field_advert_duration
+entity_type: node
+bundle: advert
+label: 'Длительность поездки'
+description: 'Длительность паломнической поездки'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      advert_duration: advert_duration
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

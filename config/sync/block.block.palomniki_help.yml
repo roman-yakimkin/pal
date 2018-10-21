@@ -1,0 +1,22 @@
+uuid: 512d2545-b4a8-4730-a4a1-d5e4d8dfcb64
+langcode: ru
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - palomniki
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: palomniki_help
+theme: palomniki
+region: content
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Справка
+  provider: help
+  label_display: '0'
+visibility: {  }

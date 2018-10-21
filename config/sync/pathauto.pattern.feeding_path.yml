@@ -1,0 +1,22 @@
+uuid: 7d7595c3-abed-4632-9aa6-88f3cdbfd271
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: feeding_path
+label: 'Питание паломников - шаблон пути'
+type: 'canonical_entities:node'
+pattern: 'feeding/[node:nid]'
+selection_criteria:
+  c4f789b5-e0ab-492a-ae9b-d1cf052ad3e1:
+    id: node_type
+    bundles:
+      feeding_service: feeding_service
+    negate: false
+    context_mapping:
+      node: node
+    uuid: c4f789b5-e0ab-492a-ae9b-d1cf052ad3e1
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,19 @@
+uuid: f799d3a5-8bdd-4a95-8df6-58c5939d47b6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_advert_route
+    - node.type.advert
+id: node.advert.field_advert_route
+field_name: field_advert_route
+entity_type: node
+bundle: advert
+label: 'Маршрут поездки'
+description: 'Маршрут паломнической поездки'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

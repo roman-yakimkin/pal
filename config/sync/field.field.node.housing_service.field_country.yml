@@ -1,0 +1,28 @@
+uuid: 09de1a98-037d-4bd5-a655-57f4c8942d08
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country
+    - node.type.housing_service
+    - taxonomy.vocabulary.countries
+id: node.housing_service.field_country
+field_name: field_country
+entity_type: node
+bundle: housing_service
+label: Страна
+description: 'Указать страну и при необходимости регион'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      countries: countries
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

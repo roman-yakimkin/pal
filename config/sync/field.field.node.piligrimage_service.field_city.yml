@@ -1,0 +1,25 @@
+uuid: b9e75a48-923a-4b0a-bbe5-1c8564054269
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.piligrimage_service
+id: node.piligrimage_service.field_city
+field_name: field_city
+entity_type: node
+bundle: piligrimage_service
+label: 'Населенный пункт'
+description: 'Населенный пункт'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: cities_for_reference
+      display_name: entity_reference_cities
+      arguments: {  }
+field_type: entity_reference

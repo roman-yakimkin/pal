@@ -1,0 +1,28 @@
+uuid: bbcf5340-dde7-483d-82f3-f8b15231d825
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_transport
+    - node.type.advert
+    - taxonomy.vocabulary.advert_transport
+id: node.advert.field_transport
+field_name: field_transport
+entity_type: node
+bundle: advert
+label: Транспорт
+description: 'Транспорт, которым будет совершаться поездка'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      advert_transport: advert_transport
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

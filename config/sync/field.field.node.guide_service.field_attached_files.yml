@@ -1,0 +1,27 @@
+uuid: 2e730def-5b15-43b7-950e-0e55e98d537e
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attached_files
+    - node.type.guide_service
+  module:
+    - file
+id: node.guide_service.field_attached_files
+field_name: field_attached_files
+entity_type: node
+bundle: guide_service
+label: Вложения
+description: 'Здесь Вы можете добавить один или несколько файлов'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt doc docx png jpg jpeg gif xls xlsx odt bmp pdf'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

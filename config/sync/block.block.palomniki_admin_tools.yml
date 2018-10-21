@@ -1,0 +1,31 @@
+uuid: f96d92c4-2f01-4e51-9755-168dec9a5d1a
+langcode: ru
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - palomniki_admin
+_core:
+  default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
+id: palomniki_admin_tools
+theme: palomniki_admin
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Инструменты
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  request_path:
+    id: request_path
+    pages: "/admin/*\r\n/node/add/*\r\n/node/*/edit"
+    negate: true
+    context_mapping: {  }
