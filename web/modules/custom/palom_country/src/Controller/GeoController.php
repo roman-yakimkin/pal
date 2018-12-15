@@ -12,7 +12,7 @@ use Drupal\palom_places\PalomPlaces;
 
 class GeoController extends ControllerBase {
 
-    // Показать список населенных пунктов по региону
+    // Show a city list by region
     public function cities($geo_id){
 
         $data['form'] = \Drupal::formBuilder()->getForm('\Drupal\palom_country\Form\GeoForm', $geo_id);
@@ -28,7 +28,7 @@ class GeoController extends ControllerBase {
             $start = $_REQUEST['page'] * $limit;
         }
 
-        // Получить список населенных пунктов по данной стране или региону
+        // Show city list by country and region
         $conn = Database::getConnection();
         $q = $conn->select('node_field_data', 'node');
         $q->innerJoin('node__field_country', 'fc', 'node.nid = fc.entity_id' );
@@ -39,12 +39,12 @@ class GeoController extends ControllerBase {
 
         if ($children == []){
 
-            // Страна без регионов или регион
+            // A country without regions
             $q->condition('fc.field_country_target_id', $geo_id);
         }
         else
         {
-            // Страна с регионами
+            // A country with regions
             $q->innerJoin('taxonomy_term_hierarchy', 'tth', 'fc.field_country_target_id = tth.tid');
             $q->condition('tth.parent', $geo_id);
         };
@@ -115,12 +115,12 @@ class GeoController extends ControllerBase {
         return $data;
     }
 
-    // Список святых мест по одному геообъекту
+    // A sacred places list by one geoobject
     public function places($geo_id){
         $data['form'] = \Drupal::formBuilder()->getForm('\Drupal\palom_country\Form\GeoForm', $geo_id);
         $children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadChildren($geo_id);
 
-        // Значения для пагинатора
+        // The value for the paginator
         $limit = 5;
 
         if (empty($_REQUEST['page'])) {
@@ -130,28 +130,28 @@ class GeoController extends ControllerBase {
             $start = $_REQUEST['page'] * $limit;
         }
 
-        // Получить список святых мест по данной стране или региону
+        // Get sacred places list by country or region
         $conn = Database::getConnection();
         $q = $conn->select('node_field_data', 'node');
         $q->innerJoin('node__field_country', 'fc', 'node.nid = fc.entity_id' );
         $q->condition('node.type', 'sacred_place');
 
-        // Населенный пункт
+        // A city
         $q->leftJoin('node__field_city', 'field_city', 'node.nid = field_city.entity_id');
         $q->leftJoin('node_field_data', 'node_city', 'field_city.field_city_target_id = node_city.nid');
 
-        // Тип населенного пункта
+        // A city type
         $q->leftJoin('node__field_city_type', 'ct', 'node_city.nid = ct.entity_id');
         $q->leftJoin('taxonomy_term_field_data', 'city_type', 'ct.field_city_type_target_id = city_type.tid');
 
         if ($children == []){
 
-            // Страна без регионов или регион
+            // A country without regions or a region
             $q->condition('fc.field_country_target_id', $geo_id);
         }
         else
         {
-            // Страна с регионами
+            // A country with regions
             $q->innerJoin('taxonomy_term_hierarchy', 'tth', 'fc.field_country_target_id = tth.tid');
             $q->condition('tth.parent', $geo_id);
         };
@@ -219,12 +219,12 @@ class GeoController extends ControllerBase {
 
     }
 
-    // Список организаций по одному геообъекту
+    // A company list by one geoobject
     public function services($geo_id){
         $data['form'] = \Drupal::formBuilder()->getForm('\Drupal\palom_country\Form\GeoForm', $geo_id);
         $children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadChildren($geo_id);
 
-        // Значения для пагинатора
+        // The value for the paginator
         $limit = 2;
 
         if (empty($_REQUEST['page'])) {
@@ -234,28 +234,28 @@ class GeoController extends ControllerBase {
             $start = $_REQUEST['page'] * $limit;
         }
 
-        // Получить список организаций по данной стране или региону
+        // Get the company list by a country or a region
         $conn = Database::getConnection();
         $q = $conn->select('node_field_data', 'node');
         $q->innerJoin('node__field_country', 'fc', 'node.nid = fc.entity_id' );
         $q->condition('node.type', ['housing_service', 'feeding_service', 'transport_service', 'guide_service'], 'IN');
 
-        // Населенный пункт
+        // A city
         $q->leftJoin('node__field_city', 'field_city', 'node.nid = field_city.entity_id');
         $q->leftJoin('node_field_data', 'node_city', 'field_city.field_city_target_id = node_city.nid');
 
-        // Тип населенного пункта
+        // A city type
         $q->leftJoin('node__field_city_type', 'ct', 'node_city.nid = ct.entity_id');
         $q->leftJoin('taxonomy_term_field_data', 'city_type', 'ct.field_city_type_target_id = city_type.tid');
 
         if ($children == []){
 
-            // Страна без регионов или регион
+            // A country without regions or a region
             $q->condition('fc.field_country_target_id', $geo_id);
         }
         else
         {
-            // Страна с регионами
+            // A country with regions
             $q->innerJoin('taxonomy_term_hierarchy', 'tth', 'fc.field_country_target_id = tth.tid');
             $q->condition('tth.parent', $geo_id);
         };

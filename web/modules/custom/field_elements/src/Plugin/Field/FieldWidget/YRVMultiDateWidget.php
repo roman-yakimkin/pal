@@ -72,7 +72,7 @@ class YRVMultiDateWidget extends WidgetBase {
             '#field_name' => $field_name,
         );
 
-        // Подключаем библиотеки и передаем данные
+        // Add a library and thansmit data
         $element['#attached']['library'][] = 'field_elements/yrv_multi_date';
         $element['#attached']['drupalSettings']['yrv_multi_date_widget'] = $yrv_multi_date_widget_settings;
 

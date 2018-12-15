@@ -15,7 +15,7 @@
             console.log(settings);
 
 
-            // Обновить дерево по коду страны
+            // Update the tree according to the country id
             function UpdateTree(country_id){
                 $.get('/palom-get-info/get-region-and-city-by-geo/'+country_id, function(data){
                     $.ui.fancytree.getTree('#yrv-tree-select-city-'+fieldName)
@@ -25,16 +25,16 @@
                 })
             }
 
-            // Получить активный узел
+            // Get active node
             function getActiveNode(){
                 var node = $('#yrv-tree-select-city-'+fieldName).fancytree("getActiveNode");
                 return node;
             }
 
-            // Добавить геообъект в список
+            // Add a geoobject into the list
             function addGeoObjectToListBox($wrapper, context){
 
-                // Если количество введенных дат не превышает максимальное
+                // If count of inputed dates not more that max count
                 var $select = $wrapper.find(".yrv-tree-select-city-listbox select");
                 var max_geo = $select.attr("data-cardinality");
                 var cnt_geo = $select[0].options.length;
@@ -44,13 +44,13 @@
 
                 if ((max_geo==-1) || (max_geo>cnt_geo)){
 
-                    // Если этот населенный пункт отсутствует в списке
+                    // If this settlement is absent in the list
                     if (geo_in_list.length == 0)
                        $select.append($("<option value='"+node.data.elem_id+"'>"+node.title+" ("+$('select[name=sel_countries] :selected', context).text()+")</option>"));
                 }
                 else
                 {
-                    // Отобразить диалог с указанием того, что введено максимальное количество дат
+                    // Display a warning dialog with max count of dates
                     $('<div id="yrv-tree-select-dialog">Уже добавлено максимальное количество населенных пунктов ('+max_geo+') для данного поля</div>').dialog({
                         'title': 'Ошибка',
                         'modal': true,
@@ -65,13 +65,13 @@
                 setHiddenField($wrapper);
             }
 
-            // Удалить геообъект из списка
+            // Remove a geoobject from the list
             function removeGeoObjectFromListBox($wrapper){
                 $wrapper.find(".yrv-tree-select-city-listbox select :selected").remove();
                 setHiddenField($wrapper);
             }
 
-            // Заполнить скрытое поле значениями для последующей записи в БД
+            // Fill a hidden field with a value
             function setHiddenField($wrapper){
 
                 var $hiddenField = $wrapper.parent('div').find('input[type=hidden]');
@@ -87,7 +87,7 @@
 
             $('body').once('initiale-tree-city-widget').each(function(){
 
-                // Инициализация дерева с регионами и городами
+                // Inittalization the tree with regions and cities
                 /*
                 var $tree = $('.yrv-tree-select-city-tree', context).easytree({
                     stateChanged: function(nodes, nodesJson){
@@ -109,7 +109,6 @@
                 });
                 */
 
-                console.log('#yrv-tree-select-city-'+fieldName);
                 $('#yrv-tree-select-city-'+fieldName).fancytree({
                     source:[],
                     dblclick: function(evt, data){
@@ -124,7 +123,7 @@
 
                 var aData = settings.yrv_tree_select_city_widget;
 
-                // Инициализация списка стран
+                // Initialization of a country list
                 var countries = aData.countries;
                 $.each(countries, function(index, value){
                     $('select[name="sel_countries"]', context).append('<option value="'+value.tid+'">'+value.name+'</option>');
@@ -138,7 +137,7 @@
                     UpdateTree($(this).val());
                 });
 
-                // Инициализация списка уже добавленных населенных пунктов
+                // Initialization of a city list already added
                 for (var aFieldName in aData){
                     var aObjects = aData[aFieldName]['objects'];
                     thisWidgetId = "#yrv-tree-select-city-widget-"+aFieldName;
@@ -153,14 +152,13 @@
                 }
             });
 
-            // По двойному нажатию на элемент списка удаление населенного пункта
+            // Remove an element by double mouse clicking
             $(".yrv-tree-select-city-listbox select", context).on("dblclick", function(){
-//                var $wrapper = $(this).closest('.yrv-tree-select-city-widget');
                 var $wrapper = $('#yrv-tree-select-city-widget-'+fieldName);
                 removeGeoObjectFromListBox($wrapper, context);
             });
 
-            // Добавление населенного пункта по нажатию на кнопку
+            // Add a city via press a button
             $(".yrv-button-add-city", context).on("click", function(){
                 var node = getActiveNode();
                 if (node.type == 'city'){
@@ -170,7 +168,7 @@
                 return false;
             });
 
-            // Удаление населенного пункта по нажатию на кнопку
+            // Remove a city via press a button
             $(".yrv-button-remove-city", context).on("click", function(){
                 var $wrapper = $(this).closest('.yrv-tree-select-city-widget');
                 removeGeoObjectFromListBox($wrapper);

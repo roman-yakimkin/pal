@@ -45,7 +45,7 @@ class PalomGeoText extends FormatterBase {
       $country_name = $country->name->value;
       $country_href = $country->toLink()->toString();
 
-      // Страна
+      // Country
       if ($region_id == 0){
         $result = str_replace(
           ['{{country}}', '{{country_href}}'],
@@ -54,7 +54,7 @@ class PalomGeoText extends FormatterBase {
         );
       }
 
-      // Страна и регион
+      // Country and region
       else{
         $region_name = $region->name->value;
         $region_href = $region->toLink()->toString();

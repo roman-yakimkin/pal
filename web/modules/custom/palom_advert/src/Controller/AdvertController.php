@@ -6,7 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 
 class AdvertController extends ControllerBase {
 
-    // Отображение списка поездок
+    // Displaying of the trip list
     public function adverts(){
         $data['form'] = \Drupal::formBuilder()->getForm('\Drupal\palom_advert\Form\AdvertForm');
 

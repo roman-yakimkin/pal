@@ -8,12 +8,12 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class FieldWidgetsController extends ControllerBase {
 
-    // Регионы и населенные пункты по одной стране
+    // Regions and cities by one country
     public function getRegionCityByGeo($geo_id){
         return new JsonResponse(FieldWidgets::getRegionCityByGeo($geo_id));
     }
 
-    // Регионы, населенные пункты и святые места по одной стране
+    // Regions, cities and sacred places by one country
     public function getRegionCityPlaceByGeo($geo_id){
         $jr = new JsonResponse(FieldWidgets::getRegionCityPlaceByGeo($geo_id));
         return $jr;

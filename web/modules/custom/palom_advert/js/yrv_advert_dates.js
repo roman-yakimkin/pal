@@ -8,7 +8,7 @@
     Drupal.behaviors.yrv_advert_dates = {
         attach: function (context) {
 
-            // Предварительная установка данных
+            // First data setting
             if (settings.advert_date_type > 0){
                 $('#edit-field-advert-dates-wrapper').once('slide-up').slideUp();
             }

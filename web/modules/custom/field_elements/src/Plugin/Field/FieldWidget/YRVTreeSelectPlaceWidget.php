@@ -34,7 +34,7 @@ class YRVTreeSelectPlaceWidget extends WidgetBase {
 
         $objects = [];
 
-        // Массив гео-объектов для передачи в виджет
+        // A geoobject array to pass into the widget
         foreach ($items->getValue() as $one_object) {
             if (isset($one_object['target_id'])){
                 $object = Node::load($one_object['target_id']);

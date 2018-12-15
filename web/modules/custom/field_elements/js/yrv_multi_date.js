@@ -8,18 +8,18 @@
     Drupal.behaviors.yrv_multi_date = {
         attach: function (context, settings) {
 
-            // Инициализация переменных
+            // Init variables
             var aData = settings.yrv_multi_date_widget;
 
-            // Добавить дату в список
+            // Add a date to the list
             function addCalendarDateToList($wrapper){
                 var currentDate = $wrapper.find('.yrv-multi-date-calendar').datepicker("getDate");
 
-                // Добавить дату в список, если её там еще нет.
+                // Add a date into lists if it is ansent.
                 var formattedDate = sprintf("%02d.%02d.%04d", currentDate.getDate(), currentDate.getMonth()+1, currentDate.getFullYear());
                 var formattedDateValue = sprintf("%04d-%02d-%02d", currentDate.getFullYear(), currentDate.getMonth()+1, currentDate.getDate() );
 
-                // Если количество введенных дат не превышает максимальное
+                // If count of inputed dates not more than max count
 
                 var $select = $wrapper.find(".yrv-multi-date-listbox select");
                 var max_dates = $select.attr("data-cardinality");
@@ -31,13 +31,13 @@
 
                 if ((max_dates==-1) || (max_dates>cnt_dates)){
 
-                    // Если эта дата отсутствует в списке
+                    // If data is not it the list
                     if (date_in_list.length == 0)
                         $wrapper.find(".yrv-multi-date-listbox select ").append($("<option value='"+formattedDateValue+"'>"+formattedDate+"</option>"));
                 }
                 else
                 {
-                    // Отобразить диалог с указанием того, что введено максимальное количество дат
+                    // Display a warning dialog with max count of datas
                     $('<div id="yrv-multi-date-dialog">Уже добавлено максимальное количество дат ('+max_dates+') для данного поля</div>').dialog({
                         'title': 'Ошибка',
                         'modal': true,
@@ -53,14 +53,14 @@
 
             };
 
-            // Удалить дату из списка
+            // Remove a date from the list
             function removeDateFromList($wrapper){
                 $wrapper.find(".yrv-multi-date-listbox select :selected").remove();
 
                 setHiddenField($wrapper);
             }
 
-            // Заполнить скрытое поле значениями для последующей записи в БД
+            // Fill a hidden field with values
             function setHiddenField($wrapper){
 
                 var $hiddenField = $wrapper.parent('div').find('input[type=hidden]');
@@ -73,7 +73,7 @@
                 $hiddenField.val(aDatesTmp);
             }
 
-            // Первоначальная инициализация списков дат (нужно выполнять один раз)
+            // Primary initialization of data lists (it's necessary to execute in once)
             $('body').once('init-data').each(function(){
 
                 var timePrev=0, timePrev2 = 0;
@@ -86,7 +86,7 @@
                         var timeNow = $.now();
                         var $wrapper = $(this).closest('.yrv-multi-date-widget');
 
-                        // Срабатывает двойной клик
+                        // Perform mouse doucle click
                         if ((timeNow - timePrev < 500) && (timePrev - timePrev2 > 500)){
                             addCalendarDateToList($wrapper);
                         }
@@ -110,20 +110,20 @@
                 }
             });
 
-            // По двойному нажатию на элемент списка удаление даты
+            // Double click to delete a date
             $(".yrv-multi-date-listbox select", context).on("dblclick", function(){
                 var $wrapper = $(this).closest('.yrv-multi-date-widget');
                 removeDateFromList($wrapper);
             });
 
-            // Добавление даты по нажатию на кнопку
+            // Adding a date via press a button
             $(".yrv-multi-date-button-add-date", context).on("click", function(){
                 var $wrapper = $(this).closest('.yrv-multi-date-widget');
                 addCalendarDateToList($wrapper);
                 return false;
             });
 
-            // Удаление даты по нажатию на кнопку
+            // Removing a date via press a button
             $(".yrv-multi-date-button-remove-date", context).on("click", function(){
                 var $wrapper = $(this).closest('.yrv-multi-date-widget');
                 removeDateFromList($wrapper);

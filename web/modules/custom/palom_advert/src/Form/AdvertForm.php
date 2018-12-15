@@ -45,7 +45,7 @@ class AdvertForm extends FormBase {
 
     }
 
-    // Вывод списка святых мест по функции автозавершения
+    // Output of a sacred places list by autocomplete function
     public function autocompleteTo(array &$form, FormStateInterface $form_state){
         $ajax_responce = new AjaxResponse();
 

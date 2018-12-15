@@ -56,7 +56,7 @@ function palom_advert_page_attachments(array &$attachments)
 }
 
 /**
- * Валидация формы
+ * The form validation
  * @param array $form
  * @param FormStateInterface $form_state
  */
@@ -65,19 +65,19 @@ function _palom_advert_form_validate(array &$form, FormStateInterface $form_stat
 
     $dates_array = [];
 
-    // Если была поездка с датами, то нужно проверить, чтобы хотя бы одна дата была добавлена
+    // A trip by dates
     if ($date_type == 0){
         if (trim($form_state->getValue('field_advert_dates')['dates']['dates_array']) == '')
            $form_state->setErrorByName('sel_advert_dates','Вам нужно ввести хотя бы одну дату поездки');
     }
 
-    // Поездка по заявке
+    // A trip by demand
     if ($date_type == 1){
         $dates_array['dates']['dates_array'] = '2500-01-01';
         $form_state->setValue('field_advert_dates', $dates_array);
     }
 
-    // Поездка по мере комплектования группы
+    // A trip by complectation of the team
     if ($date_type == 2){
         $dates_array['dates']['dates_array'] = '2600-01-01';
         $form_state->setValue('field_advert_dates', $dates_array);

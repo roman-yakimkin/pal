@@ -5,13 +5,13 @@ namespace Drupal\palom_advert;
 use Drupal\node\Entity\Node;
 
 /**
- * Получить тип дат для поездки
+ * Get a type of dates for a trip
  * @param $advert_id
  */
 
 class PalomAdvert {
 
-    // Получить типа поездки в зависимости от даты
+    // Get the trip type depending on a date
     public static function GetAdvertDateType($advert_id){
         $advert = Node::load($advert_id);
         $values = $advert->get('field_advert_dates')->getValue();

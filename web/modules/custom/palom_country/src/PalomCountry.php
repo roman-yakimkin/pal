@@ -12,7 +12,7 @@ define('GEO_IS_REGION', 2);
 
 class PalomCountry {
 
-    // Список стран
+    // A country list
     public static function getCountryList(){
         $countries = [];
         $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('countries',0,1);
@@ -22,7 +22,7 @@ class PalomCountry {
         return $countries;
     }
 
-    // Список регионов
+    // A regions list
     public static function getRegionList($country_id){
         $regions = [];
         $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('countries',$country_id,2);
@@ -32,7 +32,7 @@ class PalomCountry {
         return $regions;
     }
 
-    // Получить тип геообъекта
+    // Get the geoobject type
     public static function getGeoType($geo_id){
         $parents = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($geo_id);
 
@@ -42,14 +42,13 @@ class PalomCountry {
             return GEO_IS_REGION;
     }
 
-    // Список стран, содержащих сущности определенного типа
-    // Например, святые места, паломнические службы и т.д.
+    // Get list of countries contains entities of definitely types
     public static function getCountryListContainNodeType($node_types = []){
 
         $countries = [];
         $conn = Database::getConnection();
 
-        // Страны с регионами
+        // Countries with regions
         $q1 = $conn->select('taxonomy_term_data', 'ttd');
 
         $q1->innerJoin('taxonomy_term_field_data', 'ttfd', 'ttfd.tid=ttd.tid');
@@ -69,7 +68,7 @@ class PalomCountry {
             $q1->condition('nfd.type', $node_types, 'IN');
         $q1->condition('nfd.status', 1);
 
-        // Страны без регионов
+        // Countries without regions
         $q2 = $conn->select('taxonomy_term_data', 'ttd');
 
         $q2->innerJoin('taxonomy_term_field_data', 'ttfd', 'ttfd.tid=ttd.tid');
@@ -100,8 +99,7 @@ class PalomCountry {
         return $countries;
     }
 
-    // Список регионов, содержащих сущности определенного типа
-    // Например, святые места, паломнические службы и т.д.
+    // A list of regions contains entities of certain types
     public static function getRegionListContainNodeTypes($country_id, $node_types = []){
         $regions = [];
         $conn = Database::getConnection();

@@ -7,14 +7,14 @@ use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 
 /**
- * Вспомогательные функции для виджетов поля
+ * Auxilary functions for field widgets
  * Class FieldWidjets
  * @package Drupal\field_elements
  */
 class FieldWidgets {
 
     /**
-     * Список стран
+     * A list of countries
      * @return mixed
      */
     public static function getCountryList(){
@@ -34,9 +34,9 @@ class FieldWidgets {
     }
 
   /**
-   * Список регионов по одной стране
-   * @param $country_id - id страны
-   */
+   * A list of regions by country id
+   * @param $country_id - id of a country
+    */
     public static function getRegionList($country_id){
       $conn = Database::getConnection();
 
@@ -54,7 +54,7 @@ class FieldWidgets {
     }
 
     /**
-     * Количество регионов у страны
+     * Count regions of a country
      * @param $country_id - tid страны
      */
     public static function regionCount($country_id){
@@ -70,14 +70,14 @@ class FieldWidgets {
     }
 
     /**
-     *  Массив с регионами и городами по стране
+     *  An array with regions and cities of a country
      * @param $country_id
      */
     public static function getRegionCityByGeo($country_id){
 
         $conn = Database::getConnection();
 
-        // Массив регионов и населенных пунктов по стране
+        // An array of regions and cities by a country
         if (self::regionCount($country_id)>0){
 
             $q_regions = $conn->select('taxonomy_term_field_data', 'ttd');
@@ -90,7 +90,7 @@ class FieldWidgets {
             $results = $q_regions->execute()->fetchAll(\PDO::FETCH_ASSOC);
             foreach ($results as $key => &$value){
 
-                // Рекурсивно обходим список населенных пунктов
+                // Recursion of a list
                 $value['children'] = self::getRegionCityByGeo($value['elem_id']);
                 $value['folder'] = true;
                 $value['type'] = 'region';
@@ -99,7 +99,7 @@ class FieldWidgets {
             return $results;
         }
 
-        // Массив населенных пунктов по стране
+        // An array of cities by a country
         else
         {
             $q_cities = $conn->select('node_field_data', 'node');
@@ -120,12 +120,12 @@ class FieldWidgets {
     }
 
     /*
-     * Массив с регионами, населенными пунктами и святыми местами по стране
+     * An array with regionns, cities and sacred places by a country
      */
     public static function getRegionCityPlaceByGeo($country_id){
         $geo = self::getRegionCityByGeo($country_id);
 
-        // Перебор по странам с регионами
+        // Сycling througn countries and regions
         if (self::regionCount($country_id)>0){
             $geo_tmp = [];
 
@@ -136,7 +136,7 @@ class FieldWidgets {
 
                     if ($places == []){
 
-                        // Исключить населенный пункт без святых мест
+                        // Exclude a city without sacred placres
                         unset($one_geo['children'][$key_2]);
                     }
                     else
@@ -147,13 +147,13 @@ class FieldWidgets {
                 }
                 $one_geo['children'] = array_values($one_geo['children']);
 
-                // Добавить святые места без населенных пунктов
+                // Add sacred places without cities
                 $places_without_city = self::getPlacesWithoutCity($one_geo['elem_id']);
                 foreach($places_without_city as $one_place){
                     $one_geo['children'][] = $one_place;
                 };
 
-               // Переупаковать массив
+               // Repack an array
                 if (sizeof($one_geo['children'])>0){
                     $one_geo['folder'] = true;
                     $geo_tmp[] = $one_geo;
@@ -163,7 +163,7 @@ class FieldWidgets {
         }
         else
 
-        // Перебор по отдельным городам
+        // Cycling through separated cities
         {
             foreach ($geo as $key => &$one_city){
                 $places = self::getPlacesByCity($one_city['elem_id']);
@@ -191,7 +191,7 @@ class FieldWidgets {
     }
 
     /*
-     * Список святых мест по одному населенному пункту
+     * A list of sacred places by one city
      */
     public static function getPlacesByCity($city_id){
         $conn = Database::getConnection();
@@ -215,7 +215,7 @@ class FieldWidgets {
     }
 
     /*
-     * Список святых мест по стране/региону, не привязанных ни к одному населенному пункту
+     *  A list of sacred places not connected with any city
      */
     public static function getPlacesWithoutCity($geo_id){
         $conn = Database::getConnection();
@@ -245,7 +245,7 @@ class FieldWidgets {
     }
 
     /*
-     * Список населеных пунктов отправления по поездке
+     * A list of cities of department by a trip
      */
     public static function getCitiesByAdvert($advert_id){
         $conn = Database::getConnection();
@@ -262,7 +262,7 @@ class FieldWidgets {
         return $results;
     }
 
-    // Получить географическую информацию по городу
+    // Get geo info by city
     public static function getGeoByCity($city_id){
         $conn = Database::getConnection();
 
@@ -286,7 +286,7 @@ class FieldWidgets {
         return $results;
     }
 
-    // Получить географичесую информацию по святому месту
+    // Get geo info by sacred place
     public static function getGeoByPlace($place_id){
         $conn = Database::getConnection();
 
@@ -303,11 +303,11 @@ class FieldWidgets {
         foreach ($results as &$value){
             if ($value['name_1'] == '')
 
-                // Страна
+                // Country
                 $value['geo_str'] = '('.$value['name_2'].')';
             else
 
-                // Страна, Регион
+                // Country, Region
                 $value['geo_str'] = '('.$value['name_1'].', '.$value['name_2'].')';
         }
 

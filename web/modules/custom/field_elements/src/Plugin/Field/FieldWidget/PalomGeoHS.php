@@ -82,7 +82,7 @@ class PalomGeoHS extends WidgetBase {
       ]
     ];
 
-    // Вывод регионов
+    // Output of regions
     $regions = PalomGeo::getRegionList($country_id);
 
     if ($regions!=[]){
@@ -118,7 +118,7 @@ class PalomGeoHS extends WidgetBase {
     return $ret_values;
   }
 
-  // Отображение списка регионов в некоторых случаях
+  // Output of the region list in certain cases
   public function changeCountry(array &$form, FormStateInterface $form_state){
 /*
     $country_id = $form_state->getValue('field_geo')[0]['country_id'];

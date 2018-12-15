@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class AdvertAutocomplete {
 
-    // Возвращение списка стран, населенных пунктов и святых мест по автозавершению
+    // A list of countries, regions and sacred places by autocomplete
     public function autocompleteTo(Request $request){
 
         $string = $request->query->get('q');
@@ -20,7 +20,7 @@ class AdvertAutocomplete {
             $conn = Database::getConnection();
 
             /*
-             *  Список стран
+             *  A list of countries
              */
             $q_countries = $conn->select('taxonomy_term_field_data', 'country');
             $q_countries->addField('country', 'tid', 'id');
@@ -39,7 +39,7 @@ class AdvertAutocomplete {
             $q_countries->condition('tth.parent', 0);
 
             /*
-             *  Список населенных пунктов
+             *  A list of regions
              */
             $q_cities = $conn->select('node_field_data', 'city');
             $q_cities->addField('city', 'nid', 'id');
@@ -52,7 +52,7 @@ class AdvertAutocomplete {
             $q_cities->leftJoin('taxonomy_term_field_data', 'city_type', 'field_city_type.field_city_type_target_id = city_type.tid');
             $q_cities->addField('city_type', 'name', 'city_type_name');
 
-            // Страна и регион
+            // Country and region
             $q_cities->leftJoin('node__field_country', 'field_geo_1', 'city.nid = field_geo_1.entity_id');
             $q_cities->leftJoin('taxonomy_term_field_data', 'geo_1', 'field_geo_1.field_country_target_id = geo_1.tid');
             $q_cities->addField('geo_1', 'name', 'geo_name_1');
@@ -65,7 +65,7 @@ class AdvertAutocomplete {
             $q_cities->addExpression(':city_type', 'object_type', [':city_type' => 'city']);
 
             /*
-             * Список святых мест
+             * A list of sacred places
              */
             $q_places = $conn->select('node_field_data', 'place');
             $q_places->addField('place', 'nid', 'id');
@@ -74,17 +74,17 @@ class AdvertAutocomplete {
             $q_places->condition('place.type', 'sacred_place');
             $q_places->condition('place.status', 1);
 
-            // Населенный пункт
+            // City
             $q_places->leftJoin('node__field_city', 'field_city', 'place.nid = field_city.entity_id');
             $q_places->leftJoin('node_field_data', 'city', 'field_city.field_city_target_id = city.nid');
             $q_places->condition('city.status', 1);
 
-            // Тип населенного пункта
+            // Type of the city
             $q_places->leftJoin('node__field_city_type', 'field_city_type', 'city.nid = field_city_type.entity_id');
             $q_places->leftJoin('taxonomy_term_field_data', 'city_type', 'field_city_type.field_city_type_target_id = city_type.tid');
             $q_places->addField('city_type', 'name', 'city_type_name');
 
-            // Страна и регион
+            // Country and region
             $q_places->leftJoin('node__field_country', 'field_geo_1', 'place.nid = field_geo_1.entity_id');
             $q_places->leftJoin('taxonomy_term_field_data', 'geo_1', 'field_geo_1.field_country_target_id = geo_1.tid');
             $q_places->addField('geo_1', 'name', 'geo_name_1');
@@ -96,7 +96,7 @@ class AdvertAutocomplete {
             $q_places->addField('city', 'title', 'city_name');
             $q_places->addExpression(':place_type', 'object_type', [':place_type' => 'place']);
             /*
-             * Собрать всё в общий запрос
+             * Collect evetyhing into a common query
              */
             $q = $q_countries->union($q_cities)->union($q_places)->range(0,15);
 
