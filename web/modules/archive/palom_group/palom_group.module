@@ -12,12 +12,12 @@ use Drupal\palom_group\PalomGroup;
  */
 function palom_group_node_insert(Drupal\Core\Entity\EntityInterface $node)
 {
-    // Если добавляется нода, которая относится к организациям
+    // If we add a node whic is a company
     if (PalomGroup::typeIsOrgn($node->getType())){
 
         $group_type_name = PalomGroup::getGroupTypeByNodeType($node->getType());
 
-        // При добавлении новой организации создается группа
+        // Greate a group upon adding a company
         $group = Group::create([
             'type' => $group_type_name,
             'label' => $node->getTitle(),
@@ -25,7 +25,7 @@ function palom_group_node_insert(Drupal\Core\Entity\EntityInterface $node)
         $group->enforceIsNew();
         $group->save();
 
-        // Добавить в группу данную организацию
+        // Add this company into the group
         $plugin_name = 'group_node:'.$node->getType();
         $type = GroupType::load($group_type_name)->getContentPlugin($plugin_name)->getContentTypeConfigId();
         $groupContentEntity = GroupContent::create([
@@ -37,8 +37,7 @@ function palom_group_node_insert(Drupal\Core\Entity\EntityInterface $node)
         $groupContentEntity->save();
     }
 
-    // При добавлении паломнического марщрута его следует добавить в ту группу,
-    // которая связана с паломнической службой
+    // Add a piligrimage advert into the group which contains its piligrimage service
     if ($node->getType() == 'advert'){
         $service_id = $node->get('field_service')->getValue()[0]['target_id'];
         $groups = PalomGroup::getGroupIdByEntityId('group_ps', 'group_node:piligrimage_service', $service_id);
@@ -64,7 +63,7 @@ function palom_group_node_insert(Drupal\Core\Entity\EntityInterface $node)
  */
 function palom_group_node_update(Drupal\Core\Entity\EntityInterface $node)
 {
-    // Отредактировать название группы после редактирования организации
+    // After changing a company name we should also edit a group name
     if ($node->getType() == 'advert'){
         $service_id = $node->get('field_service')->getValue()[0]['target_id'];
         $groups = PalomGroup::getGroupIdByEntityId('group_ps', 'group_node:piligrimage_service', $service_id);

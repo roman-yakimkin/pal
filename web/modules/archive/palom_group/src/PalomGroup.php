@@ -9,12 +9,12 @@ class PalomGroup {
 
     private static  $orgn = ['piligrimage_service', 'transport_service', 'feeding_service', 'housing_service'];
 
-    // Является ли организацией данный тип ноды
+    // Is this nodetype a company
     public static function typeIsOrgn($node_type){
         return in_array($node_type, self::$orgn);
     }
 
-    // Получить тип группы по типу ноды
+    // Get group type by node type
     public static function getGroupTypeByNodeType($node_type){
 
         $org_group = [
@@ -28,7 +28,7 @@ class PalomGroup {
         return $org_group[$node_type];
     }
 
-    // Получить ID групп, в которых состоит данная сущность
+    // Get group IDs by this entity
     public static function getGroupIdByEntityId($group_type, $plugin_name, $entity_id){
         $type = GroupType::load($group_type)->getContentPlugin($plugin_name)->getContentTypeConfigId();
 

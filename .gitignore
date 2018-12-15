@@ -22,3 +22,7 @@
 
 # Ignore .env files as they are personal
 /.env
+
+#i Ignore docker files
+/docker-compose.yml
+/docker-sync.yml

@@ -32,7 +32,7 @@ function field_elements_field_views_data(FieldStorageConfigInterface $field_stor
         'is_grouped' => TRUE,
         'table' => $table_name,
         'entity_type' => $entity_type_id,
-        'field_name' => $args['@field_name'] . '_country_region',
+        'field_name' => $args['@field_name'] . '_geo',
         'real field' => $args['@field_name'],
         'label' => t('Country and region of ', $args),
         'allow empty' => TRUE,
