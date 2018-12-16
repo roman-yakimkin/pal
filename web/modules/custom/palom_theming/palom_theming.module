@@ -4,9 +4,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
+ * Altering the input node form
  */
 function palom_theming_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id)
 {
-//    vdp($form['#theme']);
-//    vdp($form_id);
 }
