@@ -11,13 +11,13 @@ use Drupal\palom_services\Form\ServicesForm;
 
 class ServicesController extends ControllerBase {
 
-    // Функция для проверки на корректность названия службы
+    // Verify a piligrimage company name
     public function access(AccountInterface $account, $service_path){
         $condition = (PalomServices::getServiceType($service_path) != null);
         return AccessResult::allowedIf(true);
     }
 
-    // Получить информацию по службе определенного типа
+    // Get info of a pilgrimage service.
     public function getServices($service_path){
         $service_type = PalomServices::getServiceType($service_path);
         $data['form'] = \Drupal::formBuilder()->getForm('\Drupal\palom_services\Form\ServicesForm', $service_type);

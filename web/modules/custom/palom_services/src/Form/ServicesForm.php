@@ -17,12 +17,12 @@ class ServicesForm extends FormBase {
 
     private $service_type;
 
-    // Конструктор формы
+    // The form constructor
     public function __constructor($_service_type){
         $this->service_type = $_service_type;
     }
 
-    // Формирование формы
+    // The form building
     public function buildForm(array $form, FormStateInterface $form_state, $args = NULL){
         $this->service_type = $args;
 
@@ -69,7 +69,7 @@ class ServicesForm extends FormBase {
             ]
         ];
 
-        // Вывод регионов
+        // Output of regions
         $form['region_wrapper'] = [
             '#type' => 'container',
             '#attributes' => [
@@ -90,7 +90,7 @@ class ServicesForm extends FormBase {
             ];
         }
 
-        // Вывод населенных пунктов
+        // Output of cities
         $form['city_wrapper'] = [
             '#type' => 'container',
             '#attributes' => [
@@ -139,7 +139,7 @@ class ServicesForm extends FormBase {
             ]
         ];
 
-        // Если еще остались неотображенные элементы, добавить кнопку "добавить еще"
+        // In case of undisplayed objects we add a button "Add more"
         if ($services_geo_count > $services_geo_start + PalomServices::getCountDefault()+1){
             $form['btn_services_geo_add_more_wrapper']['btn_services_geo_add_more'] = [
                 '#type' => 'button',
@@ -171,7 +171,7 @@ class ServicesForm extends FormBase {
             ]
         ];
 
-        // Если было выбрано святое место через autocomplete
+        // If the sacred place was selected via autocomplete
         if (isset($trigger['#attributes']['data-drupal-selector']) && ($trigger['#attributes']['data-drupal-selector'] === 'edit-autocomplete-places')){
             $place_id = $this->getAutocompletePlaceId($form_state);
             $services_by_place_count = PalomServices::getServicesByPlaceCount($this->service_type, $place_id);
@@ -193,20 +193,19 @@ class ServicesForm extends FormBase {
 
         if (isset($trigger['#ajax']['callback'])) {
 
-            // Если была нажата кнопка "еще", то пересчитать начальное значение элемента для выдачи
+            // If the button "Add more" is pressed, then recalc the first value of element
             if ($trigger['#attributes']['data-drupal-selector'] === 'edit-btn-services-geo-add-more')
                 $services_geo_start += PalomServices::getCountDefault();
             else
                 $services_geo_start = 0;
 
-            // Если была нажата кнопка "еще", то пересчитать начальное значение элемента для выдачи
             if ($trigger['#attributes']['data-drupal-selector'] === 'edit-btn-services-by-place-add-more')
                 $services_by_place_start += PalomServices::getCountDefault();
             else
                 $services_by_place_start = 0;
         };
 
-        // Если еще остались неотображенные элементы, добавить кнопку "добавить еще"
+        // In case of undisplayed elementd add a button "Add more"
         if ($services_by_place_count > $services_by_place_start + PalomServices::getCountDefault()) {
             $form['btn_services_by_place_add_more_wrapper']['btn_services_by_place_add_more'] = [
                 '#type' => 'button',
@@ -227,8 +226,6 @@ class ServicesForm extends FormBase {
         $form_state->set('services_by_place_count', $services_by_place_count);
 
         $ttt = $form_state->getTriggeringElement();
-
-
 
         $form_state->setCached(FALSE);
 
@@ -251,7 +248,7 @@ class ServicesForm extends FormBase {
         return $matches[0];
     }
 
-    // Вывод списка святых мест по функции автозавершения
+    // Output the list of sacred places by autocomplete function
     public function autocompleteGetPlaces(array &$form, FormStateInterface $form_state){
         $ajax_responce = new AjaxResponse();
 
@@ -268,7 +265,7 @@ class ServicesForm extends FormBase {
         return $ajax_responce;
     }
 
-    // Установка региона и населенных пунктов при смене страны + вывод организаций
+    // Set regions and cities upon changing a country + output the companies
     public function changeCountry(array &$form, FormStateInterface $form_state){
 
         $ajax_responce = new AjaxResponse();
@@ -288,7 +285,7 @@ class ServicesForm extends FormBase {
         return $ajax_responce;
     }
 
-    // Установка населенных пунктов при смене региона + вывод организаций
+    // Set cities upon changing a region + output the companies
     public function changeRegion(array &$form, FormStateInterface $form_state){
 
         $geo_id = $form_state->getValue('regions');
@@ -305,7 +302,7 @@ class ServicesForm extends FormBase {
         return $ajax_responce;
     }
 
-    // Возвращает текущую страну или регион
+    // Returns the current country of the region
     protected function getCurrentGeo($form_state){
         $country_id = $form_state->getValue('country');
         $region_id = $form_state->getValue('regions');
@@ -318,7 +315,7 @@ class ServicesForm extends FormBase {
         return $geo_id;
     }
 
-    // Список выбранных населенных пунктов
+    // A list of selected cities
     protected function getSelectedCities(FormStateInterface $form_state){
         $cities = $form_state->getValue('cities');
         $city_ids = [];
@@ -333,7 +330,7 @@ class ServicesForm extends FormBase {
     }
 
 
-    // Изменение списка организаций при выборе списка населенных пунктов
+    // Changing of the company list upon selection of the cities list
     public function selectCity(array &$form, FormStateInterface $form_state){
         $ajax_responce = new AjaxResponse();
 
@@ -360,7 +357,7 @@ class ServicesForm extends FormBase {
         return $ajax_responce;
     }
 
-    // Подгрузить еще элементов
+    // Upload more elements
     public function servicesGeoAddMore(array &$form, FormStateInterface $form_state){
         $ajax_responce = new AjaxResponse();
 
@@ -380,7 +377,7 @@ class ServicesForm extends FormBase {
         return $ajax_responce;
     }
 
-    // Подгрузить еще элементов
+    // Upload more elements
     public function servicesByPlaceAddMore(array &$form, FormStateInterface $form_state){
         $ajax_responce = new AjaxResponse();
 
@@ -402,6 +399,3 @@ class ServicesForm extends FormBase {
     }
 
 }
-
-
-

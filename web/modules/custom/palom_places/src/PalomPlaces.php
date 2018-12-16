@@ -7,17 +7,17 @@ use Drupal\Core\Link;
 
 class PalomPlaces {
 
-    // Страна по умолчанию в форме святых мест
+    // Default country in the sacred places form
     public static function getCountryDefault(){
         return 2;
     }
 
-    // Количество выводимых святых мест
+    // Count of output sacred places
     public static function getCountDefault(){
         return 3;
     }
 
-    // Получить список населенных пунктов по стране и региону
+    // Get a list of cities by a country and a region
     public static function getCitiesList($geo_id){
         $cities = [];
         $children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadChildren($geo_id);
@@ -28,23 +28,23 @@ class PalomPlaces {
         $q->condition('node.type', 'city');
         $q->condition('node.status', 1);
 
-        // Получить тип населенного пункта
+        // Get a type of a city
         $q->leftJoin('node__field_city_type', 'ct', 'node.nid = ct.entity_id');
         $q->leftJoin('taxonomy_term_field_data', 'city_type', 'ct.field_city_type_target_id = city_type.tid');
 
         if ($children == []){
 
-            // Страна без регионов или регион
+            // A country without regions or a region
             $q->condition('fc.field_country_target_id', $geo_id);
         }
         else
         {
-            // Страна с регионами
+            // A country with regions
             $q->innerJoin('taxonomy_term_hierarchy', 'tth', 'fc.field_country_target_id = tth.tid');
             $q->condition('tth.parent', $geo_id);
         };
 
-        // Хоть одно святое место должно ссылаться на этот населенный пункт
+        // At least one sacred place should refer to this city
         $q->innerJoin('node__field_city', 'fcity', 'node.nid = fcity.field_city_target_id');
         $q->innerJoin('node_field_data', 'places', 'fcity.entity_id=places.nid');
         $q->condition('places.type', 'sacred_place');
@@ -67,32 +67,32 @@ class PalomPlaces {
         return $cities;
     }
 
-    // Общее количество святых мест
+    // The amount of sacred places
     public static function getPlacesCount($geo_id, $city_ids = []){
         $children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadChildren($geo_id);
 
         $conn = Database::getConnection();
         $q = $conn->select('node_field_data', 'node');
 
-        // Выборка святых мест по населенным пунктам
+        // The selection of sacred places by cities
         if ($city_ids != []){
             $q->innerJoin('node__field_city', 'fcity', 'node.nid = fcity.entity_id');
             $q->condition('fcity.field_city_target_id', $city_ids, 'IN');
         }
         else
 
-            // Если выбраны все города, то выборка по стране/региону
+            // If all the cities are selected then selection by the country/region
         {
             $q->innerJoin('node__field_country', 'fc', 'node.nid = fc.entity_id' );
 
             if ($children == []){
 
-                // Страна без регионов или регион
+                // A country without regions or a region
                 $q->condition('fc.field_country_target_id', $geo_id);
             }
             else
             {
-                // Страна с регионами
+                // A country with regions
                 $q->innerJoin('taxonomy_term_hierarchy', 'tth', 'fc.field_country_target_id = tth.tid');
                 $q->condition('tth.parent', $geo_id);
             };
@@ -105,7 +105,7 @@ class PalomPlaces {
         return $result;
     }
 
-    // Получить список святых мест по населенным пунктам или по региону
+    // Get the list of sacred places by cities or by a region
     public static function getPlacesList($start, $count, $geo_id, $city_ids = []){
         $places = [];
 
@@ -114,25 +114,25 @@ class PalomPlaces {
         $conn = Database::getConnection();
         $q = $conn->select('node_field_data', 'node');
 
-        // Выборка святых мест по населенным пунктам
+        // The selection of sacred places by cities
         if ($city_ids != []){
             $q->innerJoin('node__field_city', 'fcity', 'node.nid = fcity.entity_id');
             $q->condition('fcity.field_city_target_id', $city_ids, 'IN');
         }
         else
 
-        // Если выбраны все города, то выборка по стране/региону
+        // If all the cities are selected then selection by a country or a region
         {
             $q->innerJoin('node__field_country', 'fc', 'node.nid = fc.entity_id' );
 
             if ($children == []){
 
-                // Страна без регионов или регион
+                // A country without regoins or a region
                 $q->condition('fc.field_country_target_id', $geo_id);
             }
             else
             {
-                // Страна с регионами
+                // A country with regions
                 $q->innerJoin('taxonomy_term_hierarchy', 'tth', 'fc.field_country_target_id = tth.tid');
                 $q->condition('tth.parent', $geo_id);
             };
@@ -153,7 +153,7 @@ class PalomPlaces {
 
     }
 
-    // Отобразить список святых мест
+    // Display the list of sacred places
     public static function getPlaces($start, $count,  $geo_id, $city_ids = []){
         $places = PalomPlaces::getPlacesList($start, $count, $geo_id, $city_ids);
         $options = [

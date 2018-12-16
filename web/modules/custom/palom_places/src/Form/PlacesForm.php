@@ -42,7 +42,7 @@ class PlacesForm extends FormBase {
             ]
         ];
 
-        // Вывод регионов
+        // Output of regions
         $form['region_wrapper'] = [
             '#type' => 'container',
             '#attributes' => [
@@ -63,7 +63,7 @@ class PlacesForm extends FormBase {
             ];
         }
 
-        // Вывод населенных пунктов
+        // Output of cities
         $form['city_wrapper'] = [
             '#type' => 'container',
             '#attributes' => [
@@ -123,7 +123,7 @@ class PlacesForm extends FormBase {
             ]
         ];
 
-        // Если еще остались неотображенные элементы, добавить кнопку "добавить еще"
+        // Add a button "addMode" in case of undisplayed elements
         if ($places_count > $element_start + PalomPlaces::getCountDefault()){
             $form['btn_add_more_wrapper']['btn_add_more'] = [
                 '#type' => 'button',
@@ -162,7 +162,7 @@ class PlacesForm extends FormBase {
         $form_state->setRebuild();
     }
 
-    // Установка региона и населенных пунктов при смене страны + вывод святых мест
+    // Set up region and cities upon changing a country + output of sacred places
     public function changeCountry(array &$form, FormStateInterface $form_state){
 
         $ajax_responce = new AjaxResponse();
@@ -181,7 +181,7 @@ class PlacesForm extends FormBase {
         return $ajax_responce;
     }
 
-    // Установка населенных пунктов при смене региона + вывод святых мест
+    // Set up cities upon changing a region + output of sacred places
     public function changeRegion(array &$form, FormStateInterface $form_state){
         $geo_id = $form_state->getValue('regions');
         if ($geo_id == -1)
@@ -196,7 +196,7 @@ class PlacesForm extends FormBase {
         return $ajax_responce;
     }
 
-    // Возвращает текущую страну или регион
+    // Returns a current country or region
     protected function getCurrentGeo($form_state){
         $country_id = $form_state->getValue('country');
         $region_id = $form_state->getValue('regions');
@@ -209,7 +209,7 @@ class PlacesForm extends FormBase {
         return $geo_id;
     }
 
-    // Список выбранных населенных пунктов
+    // A list of selected cities
     protected function getSelectedCities(FormStateInterface $form_state){
         $cities = $form_state->getValue('cities');
         $city_ids = [];
@@ -223,7 +223,7 @@ class PlacesForm extends FormBase {
         return $city_ids;
     }
 
-    // Изменение списка святы мест при выборе списка населенных пунктов
+    // Changing the list of sacred places upon choose of the city list
     public function selectCity(array &$form, FormStateInterface $form_state){
         $ajax_responce = new AjaxResponse();
 
@@ -236,7 +236,7 @@ class PlacesForm extends FormBase {
         return $ajax_responce;
     }
 
-    // Подгрузить еще элементов
+    //  Load more elements
     public function addMore(array &$form, FormStateInterface $form_state){
         $ajax_responce = new AjaxResponse();
 

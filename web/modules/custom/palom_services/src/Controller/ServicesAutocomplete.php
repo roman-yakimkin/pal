@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ServicesAutocomplete {
 
-    // Возвращение списка святых мест по автозавершению
+    // Возвращение списка святых мест по автозавершению Returns the list of sacred places by aotocompetion
     public function autocompletePlaces(Request $request){
 
         $string = $request->query->get('q');
@@ -25,18 +25,18 @@ class ServicesAutocomplete {
             $q->condition('place.type', 'sacred_place');
             $q->condition('place.status', 1);
 
-            // Населенный пункт
+            // A city
             $q->leftJoin('node__field_city', 'field_city', 'place.nid = field_city.entity_id');
             $q->leftJoin('node_field_data', 'city', 'field_city.field_city_target_id = city.nid');
             $q->condition('city.status', 1);
             $q->addField('city', 'title', 'city_name');
 
-            // Тип населенного пункта
+            // The type of a city
             $q->leftJoin('node__field_city_type', 'field_city_type', 'city.nid = field_city_type.entity_id');
             $q->leftJoin('taxonomy_term_field_data', 'city_type', 'field_city_type.field_city_type_target_id = city_type.tid');
             $q->addField('city_type', 'name', 'city_type_name');
 
-            // Страна и регион
+            // A country and a region
             $q->leftJoin('node__field_country', 'field_geo_1', 'place.nid = field_geo_1.entity_id');
             $q->leftJoin('taxonomy_term_field_data', 'geo_1', 'field_geo_1.field_country_target_id = geo_1.tid');
             $q->addField('geo_1', 'name', 'geo_name_1');
